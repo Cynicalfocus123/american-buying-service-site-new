@@ -5,7 +5,8 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 
 ## Required Project Guides
 
-- Read `AGENT.md`, `DESIGNER.md`, and `WEIGHT.md` before making site changes.
+- Before starting any task or making any workspace change, read `AGENT.md`,
+  `DESIGNER.md`, and `WEIGHT.md` in full. Do this again for every new task.
 - `DESIGNER.md` governs visual consistency and responsive behavior.
 - `WEIGHT.md` governs asset optimization, budgets, and deployment-weight checks.
 - When instructions conflict, follow the user's newest explicit request first,
@@ -23,6 +24,7 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 
 ## Token-Saving Rules
 
+- Start every new task in full caveman mode unless the user explicitly asks for a different style: use short words, short sentences, and no unnecessary explanation or formatting.
 - Keep commentary, command output, documentation, and final handoffs concise.
 - Report outcomes, verified measurements, failures, and required next actions
   without repeating unchanged context.
@@ -48,6 +50,9 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 - For video delivery, prefer web-compatible H.264, `yuv420p`, and MP4 fast-start.
   Preserve required duration and aspect ratio; remove audio only when the site
   intentionally uses muted video.
+- Process every deployed video with FFmpeg. Optimize it as much as practical while
+  preserving good visual quality, the required duration, aspect ratio, and playback
+  behavior; compare file sizes and keep the smallest verified acceptable encode.
 - Hero videos should use `autoplay muted loop playsinline` and an appropriate
   preload strategy. Do not attach or preload unused video sources.
 - Validate optimized videos with metadata inspection and a full decode check.
@@ -132,7 +137,13 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 - The ZIP root must contain the live site files directly, such as `index.html`,
   CSS, JavaScript, `.htaccess` when present, and referenced media folders/files.
   Do not include a staging, `dist/`, or `public_html/` wrapper directory.
-- Store ZIP entry paths with standard forward slashes, never Windows backslashes.
+- Put every referenced asset and required site file inside the ZIP under its correct
+  relative site folder, matching its HTML, CSS, and JavaScript reference path.
+- ZIP entries must be relative paths only: never absolute drive paths, leading `/`,
+  leading `\\`, `..` segments, or files outside the `live/` deployment folder.
+- Store ZIP entry paths with standard forward slashes only; never Windows
+  backslashes. The archive must extract directly into Hostinger `public_html`
+  without creating an extra enclosing folder.
 - Exclude source-only files, documentation, screenshots, backups, old ZIPs,
   temporary tools, source maps, package caches, `node_modules`, and `.git`.
 - Before delivery, verify:
