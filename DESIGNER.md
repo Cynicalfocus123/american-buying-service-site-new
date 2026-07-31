@@ -22,6 +22,8 @@ into a rigid template.
 - Keep the logo clearly visible at the far left.
 - Place navigation or the menu trigger beside the logo and utility controls at the
   far right.
+- On desktop, show Home, About Us, Our Services, Products, and Contact Us as visible
+  navigation links. Show the hamburger menu only on tablet and mobile.
 - Do not add an opaque white header background unless the user requests it.
 - Inner pages may use a stronger translucent background when no hero media sits
   behind the header.

@@ -19,6 +19,13 @@ mobileNav.querySelectorAll("a").forEach((link) => {
   });
 });
 
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1100) {
+    mobileNav.classList.remove("is-open");
+    menuButton.setAttribute("aria-expanded", "false");
+  }
+});
+
 document.querySelector(".tracking-panel").addEventListener("submit", (event) => {
   event.preventDefault();
 });
