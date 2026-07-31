@@ -38,6 +38,9 @@ into a rigid template.
   source from another folder.
 - Preserve `autoplay muted loop playsinline`; use a production poster when one exists.
 - Keep overlay text short and readable. Do not obscure the main video subject.
+- Center the homepage hero copy horizontally and vertically at every breakpoint.
+  Use layered text shadows for video contrast, and do not show a brand eyebrow above
+  the main hero headline.
 - Keep the homepage video hero free of tracking or utility panels unless the user
   explicitly requests a new one.
 
