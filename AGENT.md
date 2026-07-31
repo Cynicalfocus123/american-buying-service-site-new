@@ -105,6 +105,23 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 - If authentication, remote configuration, validation, or push fails, stop, preserve
   the local work, and report the exact blocker. Never report an unverified push.
 
+## Hard Git and Live Parity Rule
+
+- Every website change must update the source production files and their matching
+  files in `live/` before the Git commit is created.
+- The source, `live/`, and canonical Hostinger ZIP must represent the same verified
+  website version in the same commit. Never push a site change with a stale `live/`
+  folder or stale deployment ZIP.
+- Before every site-change commit, compare SHA-256 hashes for each production file
+  that exists in both the source root and `live/`. All matching paths must have
+  identical hashes.
+- Rebuild the canonical Hostinger ZIP only from the synchronized `live/` folder and
+  verify extraction parity before pushing.
+- Source-only documentation, concept previews, and development files remain outside
+  `live/` and the Hostinger ZIP; their intentional exclusion does not break parity.
+- Treat any source/`live/`/ZIP mismatch as a deployment-blocking failure. Fix the
+  mismatch before committing or pushing.
+
 ## Permanent Hostinger ZIP Rules
 
 - Canonical archive name:
