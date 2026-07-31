@@ -759,15 +759,16 @@ button { color: inherit; }
 
 /* Closing and footer */
 .next-step {
-  margin-top: 110px;
-  padding: 110px 24px;
+  margin-top: 50px;
+  padding: 48px 24px;
   background:
     linear-gradient(90deg, rgba(5,20,38,.94), rgba(5,20,38,.7)),
     url("American Buying Service Logo 2.png") center 53% / cover no-repeat;
   color: white;
   text-align: center;
 }
-.next-step .button { margin-top: 34px; }
+.next-step h2 { font-size: clamp(42px, 4.3vw, 64px); }
+.next-step .button { margin-top: 20px; }
 .site-footer {
   padding: 68px max(24px, calc((100vw - var(--max)) / 2)) 25px;
   background: #071424;
@@ -1070,7 +1071,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .trust-strip span { width: calc(50% - 8px); font-size: 11px; }
   .comparison { padding: 75px 16px 0; }
   .section-intro { text-align: left; }
-  .section-intro h2, .next-step h2 { font-size: 43px; }
+  .section-intro h2 { font-size: 43px; }
+  .next-step h2 { font-size: 38px; }
   .section-intro > p:last-child { font-size: 14px; }
   .info-feature { padding-top: 32px; }
   .info-feature > h3 { font-size: 34px; }
@@ -1107,7 +1109,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .outcomes { grid-template-columns: 1fr; }
   .outcomes article { min-height: 90px; padding: 22px; border-right: 0; border-bottom: 1px solid var(--line); }
   .outcomes article:last-child { border-bottom: 0; }
-  .next-step { margin-top: 75px; padding: 80px 20px; }
+  .next-step { margin-top: 36px; padding: 42px 20px; }
   .site-footer { padding: 38px 20px 22px; }
   .footer-brand { width: 260px; height: 70px; }
   .footer-top { padding-bottom: 42px; }
