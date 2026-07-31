@@ -96,4 +96,28 @@ window.addEventListener("resize", () => {
   }
 });
 
+const productFeature = document.querySelector(".product-feature");
+const productOptions = document.querySelectorAll(".product-option");
+
+if (productFeature && productOptions.length) {
+  const productTitle = productFeature.querySelector("[data-product-title]");
+  const productNote = productFeature.querySelector("[data-product-note]");
+
+  const showProduct = (option) => {
+    productFeature.dataset.category = option.dataset.category;
+    productFeature.setAttribute("aria-label", `${option.dataset.title} product category`);
+    productTitle.textContent = option.dataset.title;
+    productNote.textContent = option.dataset.note;
+    productOptions.forEach((item) => {
+      item.setAttribute("aria-pressed", String(item === option));
+    });
+  };
+
+  productOptions.forEach((option) => {
+    option.addEventListener("mouseenter", () => showProduct(option));
+    option.addEventListener("focus", () => showProduct(option));
+    option.addEventListener("click", () => showProduct(option));
+  });
+}
+
 document.querySelector("#year").textContent = new Date().getFullYear();
