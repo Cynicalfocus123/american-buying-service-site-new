@@ -251,21 +251,30 @@
         </a>
       </div>
 
-      <div class="product-interactive">
+      <div class="product-interactive" data-product-carousel>
         <div class="product-feature" data-category="otop" role="img" aria-label="OTOP Global product category">
           <div class="product-feature-caption">
             <span>Products We Serve</span>
             <h2 data-product-title>OTOP Global</h2>
             <p data-product-note>Discover products ready for the U.S. market.</p>
+            <a class="product-feature-link" href="#contact">Explore category <b>→</b></a>
           </div>
         </div>
-        <div class="product-options" aria-label="Product categories">
+        <div class="product-slider-panel">
+          <p class="product-slider-kicker">Explore product categories</p>
+          <div class="product-options" aria-label="Product categories">
           <button class="product-option" type="button" data-category="otop" data-title="OTOP Global" data-note="Discover products ready for the U.S. market." aria-pressed="true"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="21"></circle><path d="M11 32h42M32 11c7 6 10 13 10 21S39 47 32 53M32 11c-7 6-10 13-10 21s3 15 10 21"></path></svg><span>OTOP Global</span></button>
           <button class="product-option" type="button" data-category="electronics" data-title="Consumer Electronics" data-note="Connected products for a fast-moving market." aria-pressed="false"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="17" y="17" width="30" height="30" rx="2"></rect><rect x="25" y="25" width="14" height="14"></rect><path d="M25 8v9M32 8v9M39 8v9M25 47v9M32 47v9M39 47v9M8 25h9M8 32h9M8 39h9M47 25h9M47 32h9M47 39h9"></path></svg><span>Consumer Electronics</span></button>
           <button class="product-option" type="button" data-category="food" data-title="Food &amp; Beverage" data-note="Tasteful products prepared for retail shelves." aria-pressed="false"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 11v17M16 11v17M10 20h6M13 28v25M54 10v44M48 10v14c0 4 2 7 6 8"></path><circle cx="34" cy="32" r="17"></circle><path d="M34 19a13 13 0 0 1 0 26"></path></svg><span>Food &amp; Beverage</span></button>
           <button class="product-option" type="button" data-category="sport" data-title="Sport &amp; Fitness" data-note="Active products built for performance-minded buyers." aria-pressed="false"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M7 25v14M12 20v24M17 25v14M17 32h30M47 25v14M52 20v24M57 25v14"></path><rect x="20" y="28" width="24" height="8" rx="2"></rect></svg><span>Sport &amp; Fitness</span></button>
           <button class="product-option" type="button" data-category="home" data-title="Home Decor &amp; Furniture" data-note="Refined details for spaces people love to live in." aria-pressed="false"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M9 49h46M18 49V36h28v13M14 39v10M50 39v10M22 36v-8h20v8M11 12h18l5 14H7zM17 26v17M43 10h14v14H43zM46 21l4-5 5 6"></path></svg><span>Home Decor &amp; Furniture</span></button>
           <button class="product-option" type="button" data-category="garment" data-title="Garment &amp; Accessories" data-note="Apparel and accessories positioned for standout presentation." aria-pressed="false"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m20 14 12 7 12-7 11 8-7 14-8-4v12H24V32l-8 4-7-14 11-8Z"></path><path d="M27 14c0 3 2 6 5 6s5-3 5-6M23 47h27a6 6 0 0 1 0 12H23a6 6 0 0 1 0-12ZM23 47h27M23 53h27"></path></svg><span>Garment &amp; Accessories</span></button>
+          </div>
+          <div class="product-slider-controls">
+            <button class="product-slider-control" type="button" data-product-previous aria-label="Show previous product category">←</button>
+            <span class="product-slider-count" aria-live="polite"><b data-product-current>01</b><span aria-hidden="true"> / </span><span>06</span></span>
+            <button class="product-slider-control" type="button" data-product-next aria-label="Show next product category">→</button>
+          </div>
         </div>
       </div>
     </section>

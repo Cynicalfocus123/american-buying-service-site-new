@@ -100,24 +100,69 @@ const productFeature = document.querySelector(".product-feature");
 const productOptions = document.querySelectorAll(".product-option");
 
 if (productFeature && productOptions.length) {
+  const productCarousel = document.querySelector("[data-product-carousel]");
+  const productTrack = productCarousel?.querySelector(".product-options");
   const productTitle = productFeature.querySelector("[data-product-title]");
   const productNote = productFeature.querySelector("[data-product-note]");
+  const productCurrent = productCarousel?.querySelector("[data-product-current]");
+  const previousProduct = productCarousel?.querySelector("[data-product-previous]");
+  const nextProduct = productCarousel?.querySelector("[data-product-next]");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  const showProduct = (option) => {
+  const showProduct = (option, scrollIntoView = false) => {
     productFeature.dataset.category = option.dataset.category;
     productFeature.setAttribute("aria-label", `${option.dataset.title} product category`);
     productTitle.textContent = option.dataset.title;
     productNote.textContent = option.dataset.note;
+    const productIndex = Array.from(productOptions).indexOf(option);
+    if (productCurrent) productCurrent.textContent = String(productIndex + 1).padStart(2, "0");
     productOptions.forEach((item) => {
       item.setAttribute("aria-pressed", String(item === option));
     });
+    if (scrollIntoView) {
+      option.scrollIntoView({
+        behavior: reduceMotion.matches ? "auto" : "smooth",
+        block: "nearest",
+        inline: "center"
+      });
+    }
   };
 
   productOptions.forEach((option) => {
-    option.addEventListener("mouseenter", () => showProduct(option));
+    option.addEventListener("mouseenter", () => {
+      if (window.matchMedia("(hover: hover)").matches) showProduct(option);
+    });
     option.addEventListener("focus", () => showProduct(option));
-    option.addEventListener("click", () => showProduct(option));
+    option.addEventListener("click", () => showProduct(option, true));
   });
+
+  const showRelativeProduct = (direction) => {
+    const activeIndex = Array.from(productOptions).findIndex((item) => item.getAttribute("aria-pressed") === "true");
+    const nextIndex = (activeIndex + direction + productOptions.length) % productOptions.length;
+    showProduct(productOptions[nextIndex], true);
+  };
+
+  previousProduct?.addEventListener("click", () => showRelativeProduct(-1));
+  nextProduct?.addEventListener("click", () => showRelativeProduct(1));
+
+  let scrollFrame;
+  productTrack?.addEventListener("scroll", () => {
+    window.cancelAnimationFrame(scrollFrame);
+    scrollFrame = window.requestAnimationFrame(() => {
+      const trackCenter = productTrack.getBoundingClientRect().left + productTrack.clientWidth / 2;
+      let nearestOption = productOptions[0];
+      let nearestDistance = Number.POSITIVE_INFINITY;
+      productOptions.forEach((option) => {
+        const optionBounds = option.getBoundingClientRect();
+        const distance = Math.abs(optionBounds.left + optionBounds.width / 2 - trackCenter);
+        if (distance < nearestDistance) {
+          nearestDistance = distance;
+          nearestOption = option;
+        }
+      });
+      showProduct(nearestOption);
+    });
+  }, { passive: true });
 }
 
 document.querySelector("#year").textContent = new Date().getFullYear();
