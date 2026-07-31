@@ -2011,3 +2011,37 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .product-option svg { width: 45px; height: 45px; }
   .product-option span { font-size: 14px; }
 }
+
+/* Keep the interactive category selector above the product card collection. */
+.product-showcase {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.product-interactive {
+  width: min(calc(100% - 48px), 1280px);
+  order: 1;
+  margin: 0 auto;
+}
+.product-showcase-intro {
+  order: 2;
+  margin-top: clamp(72px, 9vw, 124px);
+  display: block;
+}
+.product-grid {
+  order: 3;
+  margin-bottom: clamp(74px, 9vw, 128px);
+  display: grid;
+}
+
+@media (max-width: 900px) {
+  .product-interactive { width: calc(100% - 40px); }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .product-interactive { width: 100%; }
+  .product-showcase-intro { margin-top: 62px; }
+  .product-grid { width: 100%; grid-template-columns: 1fr; }
+}
