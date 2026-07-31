@@ -2,6 +2,8 @@ const video = document.querySelector("#hero-video");
 const menuButton = document.querySelector(".nav-trigger");
 const mobileNav = document.querySelector(".mobile-nav");
 const desktopDropdowns = document.querySelectorAll(".desktop-nav .nav-dropdown");
+const desktopMenuQuery = window.matchMedia("(min-width: 1101px)");
+const dropdownCloseTimers = new WeakMap();
 
 video.play().catch(() => {
   // Browsers may defer autoplay until the page is visible.
@@ -29,6 +31,31 @@ mobileNav.querySelectorAll("a").forEach((link) => {
 });
 
 desktopDropdowns.forEach((dropdown) => {
+  const summary = dropdown.querySelector("summary");
+
+  dropdown.addEventListener("pointerenter", () => {
+    if (!desktopMenuQuery.matches) return;
+    window.clearTimeout(dropdownCloseTimers.get(dropdown));
+    desktopDropdowns.forEach((other) => {
+      if (other !== dropdown) other.open = false;
+    });
+    dropdown.open = true;
+  });
+
+  dropdown.addEventListener("pointerleave", () => {
+    if (!desktopMenuQuery.matches) return;
+    const timer = window.setTimeout(() => {
+      dropdown.open = false;
+    }, 180);
+    dropdownCloseTimers.set(dropdown, timer);
+  });
+
+  summary.addEventListener("click", (event) => {
+    if (!desktopMenuQuery.matches || event.detail === 0) return;
+    event.preventDefault();
+    dropdown.open = true;
+  });
+
   dropdown.addEventListener("toggle", () => {
     if (!dropdown.open) return;
     desktopDropdowns.forEach((other) => {
@@ -63,6 +90,7 @@ window.addEventListener("resize", () => {
     });
   } else {
     desktopDropdowns.forEach((dropdown) => {
+      window.clearTimeout(dropdownCloseTimers.get(dropdown));
       dropdown.open = false;
     });
   }

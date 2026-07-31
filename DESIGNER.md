@@ -27,6 +27,8 @@ into a rigid template.
 - Keep desktop navigation text comfortably readable and provide responsive,
   keyboard-accessible submenus for Our Services and Products. Long mobile submenus
   must remain scrollable without causing page-level overflow.
+- On desktop, open the Services and Products submenus on hover and keep each submenu
+  open while the pointer remains over its label or any part of its dropdown panel.
 - Do not add an opaque white header background unless the user requests it.
 - Inner pages may use a stronger translucent background when no hero media sits
   behind the header.
