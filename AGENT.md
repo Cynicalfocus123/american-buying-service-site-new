@@ -83,6 +83,13 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 - Hostinger handoff: upload the canonical ZIP inside the existing `public_html`
   folder, extract it there with overwrite enabled, and do not delete the existing
   `public_html` folder first.
+- Keep `.github/workflows/deploy-pages.yml` enabled so every push to `main`
+  publishes `live/` to GitHub Pages.
+- The Pages deployment job must expose
+  `${{ steps.deployment.outputs.page_url }}` through the `github-pages`
+  environment and the workflow summary.
+- Keep the repository README deployment badge and latest live-site link current.
+- Every final handoff after a push must include the GitHub Pages live URL.
 
 ## Automatic Git Workflow
 
