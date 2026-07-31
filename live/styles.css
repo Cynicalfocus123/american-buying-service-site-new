@@ -387,6 +387,31 @@ button { color: inherit; }
 }
 .trust-strip span::before { content: "•"; margin-right: 9px; color: var(--accent); }
 
+.why-abs {
+  width: min(calc(100% - 48px), 1040px);
+  margin: 0 auto;
+  padding: clamp(80px, 9vw, 136px) 0 clamp(18px, 3vw, 42px);
+}
+.why-abs h2 {
+  max-width: 900px;
+  margin: 0;
+  color: #050b12;
+  font-family: var(--display);
+  font-size: clamp(46px, 5.5vw, 78px);
+  font-weight: 900;
+  letter-spacing: -.06em;
+  line-height: .94;
+  text-transform: uppercase;
+}
+.why-abs p {
+  max-width: 875px;
+  margin: clamp(30px, 4vw, 52px) 0 0;
+  color: #091727;
+  font-size: clamp(18px, 1.75vw, 25px);
+  line-height: 1.48;
+  letter-spacing: -.012em;
+}
+
 /* Comparison */
 .comparison {
   position: relative;
@@ -1069,6 +1094,9 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .trust-strip { width: calc(100% - 32px); }
   .trust-strip div { gap: 13px; }
   .trust-strip span { width: calc(50% - 8px); font-size: 11px; }
+  .why-abs { width: calc(100% - 32px); padding: 70px 0 10px; }
+  .why-abs h2 { font-size: 45px; letter-spacing: -.055em; }
+  .why-abs p { margin-top: 31px; font-size: 18px; line-height: 1.48; }
   .comparison { padding: 75px 16px 0; }
   .section-intro { text-align: left; }
   .section-intro h2 { font-size: 43px; }
