@@ -1,0 +1,36 @@
+const video = document.querySelector("#hero-video");
+const menuButton = document.querySelector(".nav-trigger");
+const mobileNav = document.querySelector(".mobile-nav");
+
+video.play().catch(() => {
+  // Browsers may defer autoplay until the page is visible.
+});
+
+menuButton.addEventListener("click", () => {
+  const open = menuButton.getAttribute("aria-expanded") === "true";
+  menuButton.setAttribute("aria-expanded", String(!open));
+  mobileNav.classList.toggle("is-open", !open);
+});
+
+mobileNav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileNav.classList.remove("is-open");
+    menuButton.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.querySelector(".tracking-panel").addEventListener("submit", (event) => {
+  event.preventDefault();
+});
+
+document.querySelectorAll(".tracking-tabs button").forEach((tab) => {
+  tab.addEventListener("click", () => {
+    document.querySelectorAll(".tracking-tabs button").forEach((item) => {
+      const active = item === tab;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-selected", String(active));
+    });
+  });
+});
+
+document.querySelector("#year").textContent = new Date().getFullYear();
