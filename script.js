@@ -26,18 +26,4 @@ window.addEventListener("resize", () => {
   }
 });
 
-document.querySelector(".tracking-panel").addEventListener("submit", (event) => {
-  event.preventDefault();
-});
-
-document.querySelectorAll(".tracking-tabs button").forEach((tab) => {
-  tab.addEventListener("click", () => {
-    document.querySelectorAll(".tracking-tabs button").forEach((item) => {
-      const active = item === tab;
-      item.classList.toggle("is-active", active);
-      item.setAttribute("aria-selected", String(active));
-    });
-  });
-});
-
 document.querySelector("#year").textContent = new Date().getFullYear();

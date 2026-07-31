@@ -35,7 +35,8 @@ into a rigid template.
   source from another folder.
 - Preserve `autoplay muted loop playsinline`; use a production poster when one exists.
 - Keep overlay text short and readable. Do not obscure the main video subject.
-- Tracking or utility panels must remain readable, keyboard accessible, and responsive.
+- Keep the homepage video hero free of tracking or utility panels unless the user
+  explicitly requests a new one.
 
 ## Solutions Section
 
