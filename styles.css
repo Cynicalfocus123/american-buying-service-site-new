@@ -2073,3 +2073,44 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .product-showcase-intro h2 { font-size: 22px; }
   .product-showcase-intro > p:last-child { margin: 10px auto 0; font-size: 18px; }
 }
+
+/* Full-bleed video band: keeps the player on the right until compact screens. */
+.solutions-video {
+  width: calc(100% + 48px);
+  max-width: none;
+  margin: 76px -24px 0;
+  padding: clamp(36px, 5vw, 72px) max(24px, calc((100vw - var(--max)) / 2));
+  grid-template-columns: minmax(0, .86fr) minmax(420px, 1.14fr);
+  gap: clamp(32px, 6vw, 104px);
+}
+.solutions-video-copy {
+  width: 100%;
+  max-width: 500px;
+}
+.solutions-video-frame {
+  width: 100%;
+  min-width: 0;
+  border-radius: clamp(14px, 1.5vw, 22px);
+}
+
+@media (max-width: 760px) {
+  .solutions-video {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-block: 42px 48px;
+  }
+  .solutions-video-copy { max-width: 640px; }
+  .solutions-video-frame {
+    width: min(100%, 720px);
+    justify-self: end;
+  }
+}
+
+@media (max-width: 560px) {
+  .solutions-video {
+    width: calc(100% + 32px);
+    margin: 54px -16px 0;
+    padding: 36px 16px 42px;
+    gap: 28px;
+  }
+}
