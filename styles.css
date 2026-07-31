@@ -1449,22 +1449,22 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .solution-panel:hover .panel-arrow,
 .solution-panel:focus-visible .panel-arrow { opacity: 1; transform: translateX(4px); }
 .solutions-cta {
-  min-width: 190px;
-  min-height: 50px;
+  min-width: 270px;
+  min-height: 64px;
   margin: 30px auto 0;
-  padding: 0 22px;
+  padding: 0 30px;
   border: 1px solid var(--navy);
   border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 22px;
+  gap: 30px;
   width: max-content;
   color: var(--navy);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
 }
-.solutions-cta b { color: var(--accent); font-size: 17px; }
+.solutions-cta b { color: var(--accent); font-size: 20px; }
 .solutions-cta:hover { background: var(--navy); color: white; }
 
 .footer-brand {
