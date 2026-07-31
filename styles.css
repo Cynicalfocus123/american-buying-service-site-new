@@ -1159,8 +1159,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   right: 0;
   left: 0;
   z-index: 30;
-  min-height: 112px;
-  padding: 15px 26px;
+  min-height: 84px;
+  padding: 9px 26px;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 22px;
@@ -1173,8 +1173,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 }
 .site-header .brand {
   grid-column: 1;
-  width: 300px;
-  height: 82px;
+  width: 260px;
+  height: 66px;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -1214,8 +1214,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .desktop-nav > a,
 .desktop-nav > .nav-dropdown > summary {
   position: relative;
-  min-height: 58px;
-  padding: 18px 0;
+  min-height: 48px;
+  padding: 12px 0;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -1234,7 +1234,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   content: "";
   position: absolute;
   right: 0;
-  bottom: 7px;
+  bottom: 4px;
   left: 0;
   height: 2px;
   background: var(--accent);
