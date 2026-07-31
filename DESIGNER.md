@@ -38,8 +38,8 @@ into a rigid template.
 ## Solutions Section
 
 - Keep the “Our Solutions” section centered and spacious on desktop.
-- Use four image-backed service panels with consistent borders, icon treatment,
-  headings, and hover/focus behavior.
+- Use nine image-backed service panels with consistent borders, unique line icons,
+  headings, supporting text, and hover/focus behavior.
 - Panels may become two columns on tablet and one column on mobile.
 - Mobile must expose essential descriptions without requiring hover.
 - Use project-local imagery only. Do not reproduce third-party logos or branding.
