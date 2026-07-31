@@ -24,6 +24,9 @@ into a rigid template.
   far right.
 - On desktop, show Home, About Us, Our Services, Products, and Contact Us as visible
   navigation links. Show the hamburger menu only on tablet and mobile.
+- Keep desktop navigation text comfortably readable and provide responsive,
+  keyboard-accessible submenus for Our Services and Products. Long mobile submenus
+  must remain scrollable without causing page-level overflow.
 - Do not add an opaque white header background unless the user requests it.
 - Inner pages may use a stronger translucent background when no hero media sits
   behind the header.
