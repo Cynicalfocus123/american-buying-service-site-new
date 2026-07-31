@@ -49,6 +49,15 @@ button { color: inherit; }
   padding: 10px 16px;
   background: var(--white);
 }
+.skip-link:not(:focus) {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .skip-link:focus { top: 10px; }
 
 /* Concept controls */
@@ -760,21 +769,92 @@ button { color: inherit; }
 }
 .next-step .button { margin-top: 34px; }
 .site-footer {
-  padding: 50px max(24px, calc((100vw - var(--max)) / 2)) 25px;
+  padding: 68px max(24px, calc((100vw - var(--max)) / 2)) 25px;
   background: #071424;
   color: white;
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 320px 1fr auto;
-  gap: 50px;
-  align-items: center;
-  padding-bottom: 45px;
+  grid-template-columns: minmax(250px, 320px) minmax(300px, 1fr) minmax(360px, 1.2fr);
+  gap: clamp(45px, 6vw, 95px);
+  align-items: start;
+  padding-bottom: 58px;
 }
 .footer-brand { width: 290px; height: 76px; border-radius: 6px; }
-.footer-top p { max-width: 310px; color: rgba(255,255,255,.58); font-size: 13px; line-height: 1.6; }
-.footer-email { font-size: 13px; font-weight: 800; }
-.footer-email span { margin-left: 15px; color: var(--accent); }
+.footer-brand-column {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+}
+.footer-brand-copy {
+  max-width: 290px;
+  margin: 0;
+  color: rgba(255,255,255,.58);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.footer-links h2,
+.footer-contact h2 {
+  margin: 0 0 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,.28);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+.footer-link-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 28px;
+}
+.footer-link-list a {
+  width: fit-content;
+  color: rgba(255,255,255,.65);
+  font-size: 13px;
+  line-height: 1.35;
+  transition: color .2s ease, transform .2s ease;
+}
+.footer-link-list a:hover,
+.footer-link-list a:focus-visible {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+.footer-contact address {
+  display: grid;
+  gap: 21px;
+  font-style: normal;
+}
+.contact-row {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  color: rgba(255,255,255,.9);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+.contact-row a {
+  width: fit-content;
+  overflow-wrap: anywhere;
+  transition: color .2s ease;
+}
+.contact-row a:hover,
+.contact-row a:focus-visible { color: var(--accent); }
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--accent);
+}
+.contact-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .footer-bottom {
   padding-top: 22px;
   display: flex;
@@ -867,8 +947,12 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .comparison-shell { grid-template-columns: minmax(0, 1fr) 130px minmax(0, 1fr); }
   .comparison-card { padding: 30px 24px; }
   .info-layout { grid-template-columns: minmax(270px, 340px) minmax(0, 1fr); gap: 50px; }
-  .footer-top { grid-template-columns: 270px 1fr; }
-  .footer-email { grid-column: 2; }
+  .footer-top { grid-template-columns: 270px minmax(0, 1fr); }
+  .footer-contact {
+    grid-column: 1 / -1;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,.12);
+  }
 }
 
 @media (max-width: 800px) {
@@ -952,8 +1036,12 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .outcomes { grid-template-columns: 1fr 1fr; }
   .outcomes article:nth-child(2) { border-right: 0; }
   .outcomes article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-  .footer-top { grid-template-columns: 1fr; gap: 22px; }
-  .footer-email { grid-column: auto; }
+  .footer-top { grid-template-columns: 1fr; gap: 40px; }
+  .footer-contact {
+    grid-column: auto;
+    padding-top: 0;
+    border-top: 0;
+  }
 }
 
 @media (max-width: 540px) {
@@ -1022,6 +1110,10 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .next-step { margin-top: 75px; padding: 80px 20px; }
   .site-footer { padding: 38px 20px 22px; }
   .footer-brand { width: 260px; height: 70px; }
+  .footer-top { padding-bottom: 42px; }
+  .footer-links h2,
+  .footer-contact h2 { margin-bottom: 20px; }
+  .footer-link-list { gap: 15px 22px; }
   .footer-bottom { gap: 16px; flex-direction: column; }
 }
 
