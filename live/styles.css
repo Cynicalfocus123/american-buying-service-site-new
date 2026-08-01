@@ -2291,6 +2291,11 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .product-slider-controls { gap: 12px; }
 }
 
+/* Keep adjacent homepage bands connected with a subtle visual divider. */
+.product-showcase { margin: 0; }
+.product-showcase-intro { border-top: 1px solid rgba(255,255,255,.2); }
+.next-step { margin-top: 0; border-top: 1px solid rgba(255,255,255,.18); }
+
 /* About page */
 .about-page .site-header { position: relative; background: rgba(6,22,38,.92); }
 .about-hero { min-height: min(680px, calc(100vh - 84px)); display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); background: #f5f6f7; }
