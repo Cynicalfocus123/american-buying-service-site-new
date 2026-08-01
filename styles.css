@@ -2302,6 +2302,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .about-story, .about-services, .about-stats { width: min(calc(100% - 48px), 1120px); margin: 0 auto; padding: clamp(76px, 9vw, 132px) 0; }
 .about-story { display: grid; grid-template-columns: minmax(250px, .7fr) minmax(0, 1.3fr); gap: clamp(38px, 8vw, 130px); }
 .about-section-heading .eyebrow { margin-bottom: 13px; }
+.about-story .eyebrow, .about-services .eyebrow { font-size: clamp(15px, 1.35vw, 20px); letter-spacing: .16em; }
 .about-section-heading h2 { font-size: clamp(36px, 4.2vw, 62px); }
 .about-copy, .about-services-copy, .about-closing { display: grid; gap: 22px; }
 .about-copy p, .about-services-copy p, .about-closing p { margin: 0; color: #43566a; font-size: clamp(16px, 1.35vw, 19px); line-height: 1.72; }
