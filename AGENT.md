@@ -19,6 +19,8 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
   the user explicitly names one file as a limited exception for the current task.
 - All live images, logos, videos, fonts, scripts, and styles must exist inside this
   project before they are referenced by the site.
+- New pages must reuse the approved site header and footer so navigation, branding,
+  responsive behavior, and contact details remain consistent.
 - Preserve user files and unrelated changes. Do not delete or overwrite source
   assets unless the user explicitly requests it.
 

@@ -32,6 +32,8 @@ into a rigid template.
 - Do not add an opaque white header background unless the user requests it.
 - Inner pages may use a stronger translucent background when no hero media sits
   behind the header.
+- Every new page must reuse the approved homepage header and footer structure,
+  branding, navigation behavior, responsive breakpoints, and contact details.
 
 ## Hero
 

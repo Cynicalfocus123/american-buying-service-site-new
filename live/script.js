@@ -5,9 +5,30 @@ const desktopDropdowns = document.querySelectorAll(".desktop-nav .nav-dropdown")
 const desktopMenuQuery = window.matchMedia("(min-width: 1101px)");
 const dropdownCloseTimers = new WeakMap();
 
-video.play().catch(() => {
+video?.play().catch(() => {
   // Browsers may defer autoplay until the page is visible.
 });
+
+const statSection = document.querySelector("[data-stat-section]");
+if (statSection) {
+  const counters = statSection.querySelectorAll("[data-count]");
+  const renderCount = (counter, value) => {
+    const duration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 1400;
+    const start = performance.now();
+    const update = (now) => {
+      const progress = duration ? Math.min((now - start) / duration, 1) : 1;
+      counter.textContent = Math.round(value * (1 - Math.pow(1 - progress, 3))).toLocaleString("en-US");
+      if (progress < 1) window.requestAnimationFrame(update);
+    };
+    window.requestAnimationFrame(update);
+  };
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    counters.forEach((counter) => renderCount(counter, Number(counter.dataset.count)));
+    observer.disconnect();
+  }, { threshold: .25 });
+  observer.observe(statSection);
+}
 
 menuButton.addEventListener("click", () => {
   const open = menuButton.getAttribute("aria-expanded") === "true";
