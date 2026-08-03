@@ -1729,7 +1729,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   justify-items: center;
   gap: 11px;
   overflow: hidden;
-  background: url("abs-container-solutions.png") center / cover no-repeat;
+  background: url("assets/product-categories/otop-global.webp") 38% center / cover no-repeat;
   color: white;
   text-align: center;
   transition: transform .25s ease, box-shadow .25s ease;
@@ -1742,12 +1742,12 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   background: linear-gradient(145deg, rgba(4,27,51,.81), rgba(14,62,104,.76));
   transition: background .25s ease;
 }
-.product-card:nth-child(1) { background-position: 5% center; }
-.product-card:nth-child(2) { background-position: 25% center; }
-.product-card:nth-child(3) { background-position: 45% center; }
-.product-card:nth-child(4) { background-position: 65% center; }
-.product-card:nth-child(5) { background-position: 82% center; }
-.product-card:nth-child(6) { background-position: 98% center; }
+.product-card:nth-child(1) { background-image: url("assets/product-categories/otop-global.webp"); background-position: 38% center; }
+.product-card:nth-child(2) { background-image: url("assets/product-categories/consumer-electronics.webp"); background-position: 55% center; }
+.product-card:nth-child(3) { background-image: url("assets/product-categories/food-and-beverage.webp"); background-position: center; }
+.product-card:nth-child(4) { background-image: url("assets/product-categories/sports-and-fitness.webp"); background-position: 55% center; }
+.product-card:nth-child(5) { background-image: url("assets/product-categories/home-decor.webp"); background-position: 55% center; }
+.product-card:nth-child(6) { background-image: url("assets/product-categories/clothing-and-accessories.webp"); background-position: 52% center; }
 .product-card-index {
   position: absolute;
   top: 17px;
@@ -1915,7 +1915,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   isolation: isolate;
   min-height: 540px;
   overflow: hidden;
-  background: url("abs-container-solutions.png") 9% center / cover no-repeat;
+  background: url("assets/product-categories/otop-global.webp") 38% center / cover no-repeat;
   color: white;
   transition: background-position .45s ease;
 }
@@ -1926,11 +1926,11 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   background: linear-gradient(180deg, rgba(6,23,40,.03) 34%, rgba(5,20,38,.88) 100%);
   content: "";
 }
-.product-feature[data-category="electronics"] { background-position: 27% center; }
-.product-feature[data-category="food"] { background-position: 44% center; }
-.product-feature[data-category="sport"] { background-position: 60% center; }
-.product-feature[data-category="home"] { background-position: 77% center; }
-.product-feature[data-category="garment"] { background-position: 95% center; }
+.product-feature[data-category="electronics"] { background-image: url("assets/product-categories/consumer-electronics.webp"); background-position: 55% center; }
+.product-feature[data-category="food"] { background-image: url("assets/product-categories/food-and-beverage.webp"); background-position: center; }
+.product-feature[data-category="sport"] { background-image: url("assets/product-categories/sports-and-fitness.webp"); background-position: 55% center; }
+.product-feature[data-category="home"] { background-image: url("assets/product-categories/home-decor.webp"); background-position: 55% center; }
+.product-feature[data-category="garment"] { background-image: url("assets/product-categories/clothing-and-accessories.webp"); background-position: 52% center; }
 .product-feature-caption {
   position: absolute;
   right: 28px;
@@ -2076,9 +2076,9 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 
 /* Full-bleed video band: keeps the player on the right until compact screens. */
 .solutions-video {
-  width: calc(100% + 48px);
+  width: 100vw;
   max-width: none;
-  margin: 76px -24px 0;
+  margin: 76px calc(50% - 50vw) 0;
   padding: clamp(36px, 5vw, 72px) max(24px, calc((100vw - var(--max)) / 2));
   grid-template-columns: minmax(0, .86fr) minmax(420px, 1.14fr);
   gap: clamp(32px, 6vw, 104px);
@@ -2108,8 +2108,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 
 @media (max-width: 560px) {
   .solutions-video {
-    width: calc(100% + 32px);
-    margin: 54px -16px 0;
+    width: 100vw;
+    margin: 54px calc(50% - 50vw) 0;
     padding: 36px 16px 42px;
     gap: 28px;
   }
@@ -2198,16 +2198,16 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   width: 100%;
   aspect-ratio: 1 / .92;
   display: block;
-  background: url("abs-container-solutions.png") 9% center / cover no-repeat;
+  background: url("assets/product-categories/otop-global.webp") 38% center / cover no-repeat;
   box-shadow: inset 0 0 0 1px rgba(10,27,50,.08);
   content: "";
   transition: transform .3s ease, box-shadow .3s ease;
 }
-.product-option[data-category="electronics"]::before { background-position: 27% center; }
-.product-option[data-category="food"]::before { background-position: 44% center; }
-.product-option[data-category="sport"]::before { background-position: 60% center; }
-.product-option[data-category="home"]::before { background-position: 77% center; }
-.product-option[data-category="garment"]::before { background-position: 95% center; }
+.product-option[data-category="electronics"]::before { background-image: url("assets/product-categories/consumer-electronics.webp"); background-position: 55% center; }
+.product-option[data-category="food"]::before { background-image: url("assets/product-categories/food-and-beverage.webp"); background-position: center; }
+.product-option[data-category="sport"]::before { background-image: url("assets/product-categories/sports-and-fitness.webp"); background-position: 55% center; }
+.product-option[data-category="home"]::before { background-image: url("assets/product-categories/home-decor.webp"); background-position: 55% center; }
+.product-option[data-category="garment"]::before { background-image: url("assets/product-categories/clothing-and-accessories.webp"); background-position: 52% center; }
 .product-option span { font-size: clamp(15px, 1.4vw, 20px); font-weight: 800; line-height: 1.2; }
 .product-option:hover,
 .product-option:focus-visible,
@@ -2272,11 +2272,12 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
     background: linear-gradient(180deg, rgba(5,20,38,.03) 36%, rgba(5,20,38,.87) 100%);
     content: "";
   }
-  .product-option[data-category="electronics"]::before { background-position: 27% center; }
-  .product-option[data-category="food"]::before { background-position: 44% center; }
-  .product-option[data-category="sport"]::before { background-position: 60% center; }
-  .product-option[data-category="home"]::before { background-position: 77% center; }
-  .product-option[data-category="garment"]::before { background-position: 95% center; }
+  .product-option[data-category="otop"]::before { background-position: 38% center; }
+  .product-option[data-category="electronics"]::before { background-position: 55% center; }
+  .product-option[data-category="food"]::before { background-position: center; }
+  .product-option[data-category="sport"]::before { background-position: 55% center; }
+  .product-option[data-category="home"]::before { background-position: 55% center; }
+  .product-option[data-category="garment"]::before { background-position: 52% center; }
   .product-option span { font-size: clamp(28px, 8vw, 42px); letter-spacing: -.04em; }
   .product-option:hover::before,
   .product-option:focus-visible::before,
