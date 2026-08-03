@@ -1549,9 +1549,10 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .solution-panel[data-solution="sales-marketing"] { background-image: url("assets/solutions/sales-marketing-service.webp"); background-position: center; }
 .solution-panel[data-solution="sourcing-procurement"] { background-image: url("assets/solutions/sourcing-procurement-service.webp"); background-position: 50% center; }
 .solution-panel[data-solution="marketplace-ecommerce"] { background-image: url("assets/solutions/marketplace-ecommerce-sales.webp"); background-position: 50% center; }
-.solution-panel[data-solution="customer-care"] { background-image: url("abs-container-solutions.png"); background-position: center; }
+.solution-panel[data-solution="formulation-development"] { background-image: url("assets/solutions/formulation-development-service.webp"); background-position: center; }
+.solution-panel[data-solution="packaging-design"] { background-image: url("assets/solutions/packaging-design.webp"); background-position: center; }
 .solution-panel:nth-child(3n) { border-right: 0; }
-.solution-panel:nth-last-child(-n+3) { border-bottom: 0; }
+.solution-panel:last-child { grid-column: 2; border-bottom: 0; }
 .solution-panel > * { position: relative; z-index: 1; }
 .solution-panel::before {
   content: "";
@@ -1596,6 +1597,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+.solution-icon img { width: 100%; height: 100%; display: block; }
 .solution-panel strong {
   max-width: 280px;
   font-size: clamp(20px, 1.45vw, 25px);
@@ -1830,9 +1832,9 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   }
   .solution-panel:nth-child(3n) { border-right: 1px solid rgba(255,255,255,.65); }
   .solution-panel:nth-child(even) { border-right: 0; }
-  .solution-panel:nth-last-child(-n+3) { border-bottom: 1px solid rgba(255,255,255,.65); }
+  .solution-panel:nth-last-child(-n+2) { border-bottom: 0; }
   .solution-panel:last-child {
-    grid-column: 1 / -1;
+    grid-column: auto;
     border-right: 0;
     border-bottom: 0;
   }
