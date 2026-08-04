@@ -2406,3 +2406,30 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   background: rgba(244,84,37,.22);
   color: white;
 }
+
+/* Homepage and About-page editorial imagery */
+.why-abs-image {
+  width: min(42%, 340px);
+  aspect-ratio: 1 / 1;
+  float: left;
+  margin: 4px clamp(22px, 4vw, 54px) 18px 0;
+  object-fit: cover;
+}
+.next-step {
+  background:
+    linear-gradient(90deg, rgba(5,20,38,.94), rgba(5,20,38,.62)),
+    url("assets/about/virtual-office-support.webp") center / cover no-repeat;
+}
+.about-hero { grid-template-columns: minmax(0, 42%) minmax(0, 58%); }
+.about-hero-copy { clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); }
+.about-hero-media { margin-left: -8%; background-position: center; }
+.about-hero-media::after { display: none; }
+@media (max-width: 900px) {
+  .why-abs-image { width: min(46%, 310px); margin-right: 28px; }
+  .about-hero { grid-template-columns: 1fr; }
+  .about-hero-copy { clip-path: none; }
+  .about-hero-media { margin-left: 0; }
+}
+@media (max-width: 560px) {
+  .why-abs-image { width: 100%; max-width: 400px; float: none; margin: 0 0 24px; display: block; }
+}
