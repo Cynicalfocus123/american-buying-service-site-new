@@ -121,10 +121,19 @@ const productFeature = document.querySelector(".product-feature");
 const productOptions = document.querySelectorAll(".product-option");
 
 if (productFeature && productOptions.length) {
+  const productPages = {
+    otop: "otop-global.html",
+    electronics: "consumer-electronics.html",
+    food: "food-and-beverage.html",
+    sport: "sport-fitness.html",
+    home: "home-decor-furniture.html",
+    garment: "garment-accessories.html"
+  };
   const productCarousel = document.querySelector("[data-product-carousel]");
   const productTrack = productCarousel?.querySelector(".product-options");
   const productTitle = productFeature.querySelector("[data-product-title]");
   const productNote = productFeature.querySelector("[data-product-note]");
+  const productFeatureLink = productFeature.querySelector(".product-feature-link");
   const productCurrent = productCarousel?.querySelector("[data-product-current]");
   const previousProduct = productCarousel?.querySelector("[data-product-previous]");
   const nextProduct = productCarousel?.querySelector("[data-product-next]");
@@ -135,6 +144,7 @@ if (productFeature && productOptions.length) {
     productFeature.setAttribute("aria-label", `${option.dataset.title} product category`);
     productTitle.textContent = option.dataset.title;
     productNote.textContent = option.dataset.note;
+    if (productFeatureLink) productFeatureLink.href = productPages[option.dataset.category];
     const productIndex = Array.from(productOptions).indexOf(option);
     if (productCurrent) productCurrent.textContent = String(productIndex + 1).padStart(2, "0");
     productOptions.forEach((item) => {
@@ -154,7 +164,10 @@ if (productFeature && productOptions.length) {
       if (window.matchMedia("(hover: hover)").matches) showProduct(option);
     });
     option.addEventListener("focus", () => showProduct(option));
-    option.addEventListener("click", () => showProduct(option, true));
+    option.addEventListener("click", () => {
+      showProduct(option, true);
+      window.location.href = productPages[option.dataset.category];
+    });
   });
 
   const showRelativeProduct = (direction) => {
@@ -184,6 +197,8 @@ if (productFeature && productOptions.length) {
       showProduct(nearestOption);
     });
   }, { passive: true });
+
+  showProduct(productOptions[0]);
 }
 
 document.querySelector("#year").textContent = new Date().getFullYear();
