@@ -143,11 +143,6 @@ if (productFeature && productOptions.length) {
   let ignoreTrackScroll = false;
   let scrollReleaseTimer;
 
-  const syncProductTrackSpace = () => {
-    if (!productTrack) return;
-    productTrack.style.setProperty("--product-track-end-space", `${productTrack.clientWidth}px`);
-  };
-
   const showProduct = (option) => {
     productFeature.dataset.category = option.dataset.category;
     productFeature.setAttribute("aria-label", `${option.dataset.title} product category`);
@@ -229,10 +224,8 @@ if (productFeature && productOptions.length) {
   }, { passive: true });
 
   selectProduct(0);
-  syncProductTrackSpace();
   scrollToProduct(0, true);
   window.addEventListener("resize", () => {
-    syncProductTrackSpace();
     scrollToProduct(activeProductIndex, true);
   }, { passive: true });
 }

@@ -2179,7 +2179,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 }
 .product-options {
   min-width: 0;
-  padding: 0 var(--product-track-end-space, 0px) 24px 0;
+  padding: 0 0 24px;
   display: flex;
   align-items: center;
   gap: clamp(16px, 2vw, 30px);
@@ -2319,9 +2319,6 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .product-slider-kicker { font-size: 10px; }
   .product-slider-controls { gap: 12px; }
 }
-
-/* Reserve scroll room so the next category can align fully at the left edge. */
-.product-options { padding-right: var(--product-track-end-space, 0px) !important; }
 
 /* Keep adjacent homepage bands connected with a subtle visual divider. */
 .product-showcase { margin: 0; }
