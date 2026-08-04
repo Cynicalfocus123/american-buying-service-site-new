@@ -2390,3 +2390,18 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .product-video { display: block; padding: clamp(20px, 4vw, 52px); background: white; }
 .product-video-copy { display: none; }
 .product-video-frame { width: min(100%, 900px); margin: 0 auto; box-shadow: 0 18px 42px rgba(10,27,50,.14); }
+
+/* Keep product-page dropdowns legible over their category heroes. */
+.product-detail-page .nav-mega {
+  background: rgba(6,22,38,.98);
+  color: white;
+}
+.product-detail-page .desktop-nav .nav-mega a {
+  border-bottom-color: rgba(255,255,255,.16);
+  color: white;
+}
+.product-detail-page .desktop-nav .nav-mega a:hover,
+.product-detail-page .desktop-nav .nav-mega a:focus-visible {
+  background: rgba(244,84,37,.22);
+  color: white;
+}
