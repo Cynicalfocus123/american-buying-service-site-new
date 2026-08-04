@@ -139,9 +139,8 @@ if (productFeature && productOptions.length) {
   const previousProduct = productCarousel?.querySelector("[data-product-previous]");
   const nextProduct = productCarousel?.querySelector("[data-product-next]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const desktopProductTrack = window.matchMedia("(min-width: 761px)");
   let activeProductIndex = 0;
-  let ignoreTrackScroll = false;
-  let scrollReleaseTimer;
 
   const showProduct = (option) => {
     productFeature.dataset.category = option.dataset.category;
@@ -163,27 +162,31 @@ if (productFeature && productOptions.length) {
     if (nextProduct) nextProduct.disabled = activeProductIndex === productOptions.length - 1;
   };
 
+  const arrangeProductOptions = () => {
+    productOptions.forEach((option, index) => {
+      if (!desktopProductTrack.matches) {
+        option.style.order = "";
+        return;
+      }
+      const relativeIndex = (index - activeProductIndex + productOptions.length) % productOptions.length;
+      option.style.order = String(relativeIndex || productOptions.length);
+    });
+  };
+
   const scrollToProduct = (productIndex, instant = false) => {
     if (!productTrack) return;
-    const showFollowingCard = window.matchMedia("(min-width: 761px)").matches;
-    const targetIndex = showFollowingCard
-      ? Math.min(productIndex + 1, productOptions.length - 1)
-      : productIndex;
-    const targetOption = productOptions[targetIndex];
-    const target = Math.max(0, Math.min(
-      targetOption.offsetLeft,
-      productTrack.scrollWidth - productTrack.clientWidth
-    ));
-    ignoreTrackScroll = true;
-    window.clearTimeout(scrollReleaseTimer);
+    const target = desktopProductTrack.matches
+      ? 0
+      : Math.max(0, Math.min(
+        productOptions[productIndex].offsetLeft,
+        productTrack.scrollWidth - productTrack.clientWidth
+      ));
     productTrack.scrollTo({ left: target, behavior: instant || reduceMotion.matches ? "auto" : "smooth" });
-    scrollReleaseTimer = window.setTimeout(() => {
-      ignoreTrackScroll = false;
-    }, instant || reduceMotion.matches ? 0 : 450);
   };
 
   const selectProduct = (productIndex, scrollIntoView = false, instant = false) => {
     showProduct(productOptions[productIndex]);
+    arrangeProductOptions();
     if (scrollIntoView) scrollToProduct(productIndex, instant);
     updateProductControls();
   };
@@ -203,29 +206,9 @@ if (productFeature && productOptions.length) {
   previousProduct?.addEventListener("click", () => requestRelativeProduct(-1));
   nextProduct?.addEventListener("click", () => requestRelativeProduct(1));
 
-  let scrollFrame;
-  productTrack?.addEventListener("scroll", () => {
-    if (ignoreTrackScroll) return;
-    window.cancelAnimationFrame(scrollFrame);
-    scrollFrame = window.requestAnimationFrame(() => {
-      const trackLeft = productTrack.getBoundingClientRect().left;
-      let firstVisibleIndex = 0;
-      let nearestDistance = Number.POSITIVE_INFINITY;
-      productOptions.forEach((option, index) => {
-        const distance = Math.abs(option.getBoundingClientRect().left - trackLeft);
-        if (distance < nearestDistance) {
-          nearestDistance = distance;
-          firstVisibleIndex = index;
-        }
-      });
-      const featureIndex = Math.max(0, firstVisibleIndex - 1);
-      if (featureIndex !== activeProductIndex) selectProduct(featureIndex);
-    });
-  }, { passive: true });
-
-  selectProduct(0);
-  scrollToProduct(0, true);
+  selectProduct(0, true, true);
   window.addEventListener("resize", () => {
+    arrangeProductOptions();
     scrollToProduct(activeProductIndex, true);
   }, { passive: true });
 }
