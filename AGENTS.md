@@ -114,14 +114,24 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 
 ## Hard Git and Live Parity Rule
 
+- In this project, "live deployment" always means the committed `live/` folder.
+  It does not mean Hostinger. Treat `live/` as the exact GitHub Pages deployment
+  source and the required production mirror for every website change.
 - Every website change must update the source production files and their matching
   files in `live/` before the Git commit is created.
+- A website change is incomplete until `live/` is refreshed in the same task. Do
+  not defer this step, do not describe it as optional, and do not commit or push
+  a website change while `live/` is stale.
 - The source, `live/`, and canonical Hostinger ZIP must represent the same verified
   website version in the same commit. Never push a site change with a stale `live/`
   folder or stale deployment ZIP.
 - Before every site-change commit, compare SHA-256 hashes for each production file
   that exists in both the source root and `live/`. All matching paths must have
   identical hashes.
+- Also check the parity in both directions: every production source file must be
+  present in `live/`, and every `live/` file must be a referenced production file
+  or an explicitly required deployment file such as `.nojekyll`. A missing, stale,
+  or extra deployment file blocks the commit and push.
 - Rebuild the canonical Hostinger ZIP only from the synchronized `live/` folder and
   verify extraction parity before pushing.
 - Source-only documentation, concept previews, and development files remain outside
