@@ -2448,6 +2448,11 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   background-position: center;
 }
 .about-hero-media::after { display: none; }
+.product-feature[data-category="otop"] {
+  background-color: #0b3152;
+  background-position: center;
+  background-size: contain;
+}
 @media (max-width: 900px) {
   .why-abs-image { width: min(46%, 310px); margin-right: 28px; }
   .about-hero { grid-template-columns: 1fr; }
