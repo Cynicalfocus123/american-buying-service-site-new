@@ -2449,9 +2449,14 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 }
 .about-hero-media::after { display: none; }
 .product-feature[data-category="otop"] {
-  background-color: #0b3152;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
+}
+.product-option { flex-basis: clamp(180px, 19vw, 260px); }
+@media (min-width: 761px) and (max-width: 980px) {
+  .product-interactive { grid-template-columns: 1fr; }
+  .product-feature { min-height: 520px; }
+  .product-slider-panel { padding: 44px 0 48px 40px; }
 }
 @media (max-width: 900px) {
   .why-abs-image { width: min(46%, 310px); margin-right: 28px; }

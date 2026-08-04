@@ -140,6 +140,8 @@ if (productFeature && productOptions.length) {
   const nextProduct = productCarousel?.querySelector("[data-product-next]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let activeProductIndex = 0;
+  let ignoreTrackScroll = false;
+  let scrollReleaseTimer;
 
   const syncProductTrackSpace = () => {
     if (!productTrack) return;
@@ -177,7 +179,12 @@ if (productFeature && productOptions.length) {
       targetOption.offsetLeft,
       productTrack.scrollWidth - productTrack.clientWidth
     ));
+    ignoreTrackScroll = true;
+    window.clearTimeout(scrollReleaseTimer);
     productTrack.scrollTo({ left: target, behavior: instant || reduceMotion.matches ? "auto" : "smooth" });
+    scrollReleaseTimer = window.setTimeout(() => {
+      ignoreTrackScroll = false;
+    }, instant || reduceMotion.matches ? 0 : 450);
   };
 
   const selectProduct = (productIndex, scrollIntoView = false, instant = false) => {
@@ -200,6 +207,26 @@ if (productFeature && productOptions.length) {
 
   previousProduct?.addEventListener("click", () => requestRelativeProduct(-1));
   nextProduct?.addEventListener("click", () => requestRelativeProduct(1));
+
+  let scrollFrame;
+  productTrack?.addEventListener("scroll", () => {
+    if (ignoreTrackScroll) return;
+    window.cancelAnimationFrame(scrollFrame);
+    scrollFrame = window.requestAnimationFrame(() => {
+      const trackLeft = productTrack.getBoundingClientRect().left;
+      let firstVisibleIndex = 0;
+      let nearestDistance = Number.POSITIVE_INFINITY;
+      productOptions.forEach((option, index) => {
+        const distance = Math.abs(option.getBoundingClientRect().left - trackLeft);
+        if (distance < nearestDistance) {
+          nearestDistance = distance;
+          firstVisibleIndex = index;
+        }
+      });
+      const featureIndex = Math.max(0, firstVisibleIndex - 1);
+      if (featureIndex !== activeProductIndex) selectProduct(featureIndex);
+    });
+  }, { passive: true });
 
   selectProduct(0);
   syncProductTrackSpace();
