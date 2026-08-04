@@ -2437,18 +2437,27 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
     linear-gradient(90deg, rgba(5,20,38,.94), rgba(5,20,38,.62)),
     url("assets/about/virtual-office-support.webp") center / cover no-repeat;
 }
-.about-hero { grid-template-columns: minmax(0, 42%) minmax(0, 58%); }
-.about-hero-copy { clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); }
-.about-hero-media { margin-left: -8%; background-position: center; }
+.about-hero {
+  min-height: clamp(560px, 47vw, 680px);
+  grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+}
+.about-hero-copy { clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%); }
+.about-hero-media {
+  margin-left: -7%;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+  background-image: linear-gradient(180deg, rgba(7,24,42,.06), rgba(7,24,42,.32)), url("assets/about/market-aisle-hero.webp");
+  background-position: center;
+}
 .about-hero-media::after { display: none; }
 @media (max-width: 900px) {
   .why-abs-image { width: min(46%, 310px); margin-right: 28px; }
   .about-hero { grid-template-columns: 1fr; }
   .about-hero-copy { clip-path: none; }
-  .about-hero-media { margin-left: 0; }
+  .about-hero-media { min-height: 390px; margin-left: 0; clip-path: none; }
 }
 @media (max-width: 560px) {
   .why-abs-image { width: 100%; max-width: 400px; float: none; margin: 0 0 24px; display: block; }
+  .about-hero-media { min-height: 290px; }
 }
 
 /* Keep the Why Use section centered with the sections that follow it. */
