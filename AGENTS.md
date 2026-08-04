@@ -128,10 +128,13 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 - Before every site-change commit, compare SHA-256 hashes for each production file
   that exists in both the source root and `live/`. All matching paths must have
   identical hashes.
-- Also check the parity in both directions: every production source file must be
-  present in `live/`, and every `live/` file must be a referenced production file
-  or an explicitly required deployment file such as `.nojekyll`. A missing, stale,
-  or extra deployment file blocks the commit and push.
+- Also check the parity in both directions: every tracked website file in the Git
+  working tree must be present in `live/`, and every `live/` file must match a
+  tracked website file or be an explicitly required deployment file such as
+  `.nojekyll`. This includes tracked concept pages, concept assets, and alternate
+  local website assets. Exclude only Git metadata, GitHub workflow files, Markdown
+  documentation, the canonical ZIP, and temporary verification folders. A missing,
+  stale, or extra deployment file blocks the commit and push.
 - Rebuild the canonical Hostinger ZIP only from the synchronized `live/` folder and
   verify extraction parity before pushing.
 - Source-only documentation, concept previews, and development files remain outside
