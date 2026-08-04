@@ -140,16 +140,13 @@ if (productFeature && productOptions.length) {
   const nextProduct = productCarousel?.querySelector("[data-product-next]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let activeProductIndex = 0;
-  let controlScrollInProgress = false;
-  let controlScrollTimer;
-  const stepQueue = [];
 
   const syncProductTrackSpace = () => {
     if (!productTrack) return;
     productTrack.style.setProperty("--product-track-end-space", `${productTrack.clientWidth}px`);
   };
 
-  const showProduct = (option, scrollIntoView = false) => {
+  const showProduct = (option) => {
     productFeature.dataset.category = option.dataset.category;
     productFeature.setAttribute("aria-label", `${option.dataset.title} product category`);
     productTitle.textContent = option.dataset.title;
@@ -162,7 +159,6 @@ if (productFeature && productOptions.length) {
     productOptions.forEach((item) => {
       item.setAttribute("aria-pressed", String(item === option));
     });
-    if (scrollIntoView && productTrack) scrollToProduct(option);
   };
 
   const updateProductControls = () => {
@@ -170,10 +166,13 @@ if (productFeature && productOptions.length) {
     if (nextProduct) nextProduct.disabled = activeProductIndex === productOptions.length - 1;
   };
 
-  const scrollToProduct = (option, instant = false) => {
+  const scrollToProduct = (productIndex, instant = false) => {
+    if (!productTrack) return;
     const showFollowingCard = window.matchMedia("(min-width: 761px)").matches;
-    const followingIndex = (activeProductIndex + 1) % productOptions.length;
-    const targetOption = showFollowingCard ? productOptions[followingIndex] : option;
+    const targetIndex = showFollowingCard
+      ? Math.min(productIndex + 1, productOptions.length - 1)
+      : productIndex;
+    const targetOption = productOptions[targetIndex];
     const target = Math.max(0, Math.min(
       targetOption.offsetLeft,
       productTrack.scrollWidth - productTrack.clientWidth
@@ -181,37 +180,20 @@ if (productFeature && productOptions.length) {
     productTrack.scrollTo({ left: target, behavior: instant || reduceMotion.matches ? "auto" : "smooth" });
   };
 
-  const finishControlStep = () => {
-    window.clearTimeout(controlScrollTimer);
-    controlScrollInProgress = false;
+  const selectProduct = (productIndex, scrollIntoView = false, instant = false) => {
+    showProduct(productOptions[productIndex]);
+    if (scrollIntoView) scrollToProduct(productIndex, instant);
     updateProductControls();
-    const direction = stepQueue.shift();
-    if (direction !== undefined) requestRelativeProduct(direction);
   };
 
   const requestRelativeProduct = (direction) => {
-    if (controlScrollInProgress) {
-      stepQueue.push(direction);
-      return;
-    }
     const nextIndex = Math.max(0, Math.min(productOptions.length - 1, activeProductIndex + direction));
-    if (nextIndex === activeProductIndex) {
-      updateProductControls();
-      return;
-    }
-    controlScrollInProgress = true;
-    showProduct(productOptions[nextIndex], true);
-    if (reduceMotion.matches) {
-      finishControlStep();
-      return;
-    }
-    controlScrollTimer = window.setTimeout(finishControlStep, 420);
+    if (nextIndex !== activeProductIndex) selectProduct(nextIndex, true);
   };
 
   productOptions.forEach((option) => {
-    option.addEventListener("focus", () => showProduct(option));
     option.addEventListener("click", () => {
-      showProduct(option, true);
+      selectProduct(Array.from(productOptions).indexOf(option), true);
       window.location.href = productPages[option.dataset.category];
     });
   });
@@ -219,35 +201,12 @@ if (productFeature && productOptions.length) {
   previousProduct?.addEventListener("click", () => requestRelativeProduct(-1));
   nextProduct?.addEventListener("click", () => requestRelativeProduct(1));
 
-  let scrollFrame;
-  productTrack?.addEventListener("scroll", () => {
-    window.cancelAnimationFrame(scrollFrame);
-    scrollFrame = window.requestAnimationFrame(() => {
-      const trackCenter = productTrack.getBoundingClientRect().left + productTrack.clientWidth / 2;
-      let nearestOption = productOptions[0];
-      let nearestDistance = Number.POSITIVE_INFINITY;
-      productOptions.forEach((option) => {
-        const optionBounds = option.getBoundingClientRect();
-        const distance = Math.abs(optionBounds.left + optionBounds.width / 2 - trackCenter);
-        if (distance < nearestDistance) {
-          nearestDistance = distance;
-          nearestOption = option;
-        }
-      });
-      if (!controlScrollInProgress) {
-        showProduct(nearestOption);
-        updateProductControls();
-      }
-    });
-  }, { passive: true });
-
-  showProduct(productOptions[0]);
-  updateProductControls();
+  selectProduct(0);
   syncProductTrackSpace();
-  scrollToProduct(productOptions[0], true);
+  scrollToProduct(0, true);
   window.addEventListener("resize", () => {
     syncProductTrackSpace();
-    scrollToProduct(productOptions[activeProductIndex], true);
+    scrollToProduct(activeProductIndex, true);
   }, { passive: true });
 }
 
