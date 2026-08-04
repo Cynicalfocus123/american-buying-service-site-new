@@ -2180,7 +2180,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 }
 .product-options {
   min-width: 0;
-  padding: 0 0 24px;
+  padding: 0 var(--product-track-end-space, 0px) 24px 0;
   display: flex;
   align-items: center;
   gap: clamp(16px, 2vw, 30px);
@@ -2188,12 +2188,10 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   overflow-y: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) rgba(10,27,50,.14);
+  scrollbar-width: none;
   overscroll-behavior-inline: contain;
 }
-.product-options::-webkit-scrollbar { height: 5px; }
-.product-options::-webkit-scrollbar-thumb { background: var(--accent); }
+.product-options::-webkit-scrollbar { display: none; }
 .product-option {
   flex: 0 0 clamp(190px, 21vw, 306px);
   min-height: 0;
@@ -2229,6 +2227,21 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .product-option:hover::before,
 .product-option:focus-visible::before,
 .product-option[aria-pressed="true"]::before { box-shadow: inset 0 0 0 4px var(--accent); transform: translateY(-4px); }
+.product-progress {
+  width: min(100%, 560px);
+  height: 3px;
+  margin: 24px 0 0;
+  overflow: hidden;
+  background: rgba(10,27,50,.16);
+}
+.product-progress span {
+  width: calc(100% / 6);
+  height: 100%;
+  display: block;
+  background: var(--accent);
+  transform: translateX(calc(var(--product-progress, 0) * 100%));
+  transition: transform .3s ease;
+}
 .product-slider-controls {
   width: min(100% - 24px, 430px);
   padding-top: 22px;
@@ -2259,7 +2272,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .product-feature { display: none; }
   .product-slider-panel { padding: 34px 0 34px 20px; }
   .product-slider-kicker { margin-bottom: 22px; }
-  .product-options { padding: 0 20px 22px 0; gap: 16px; }
+  .product-options { padding: 0 20px 0 0; gap: 16px; }
+  .product-progress { width: calc(100% - 20px); margin: 20px 20px 0 0; }
   .product-option {
     flex-basis: min(84vw, 420px);
     min-height: min(112vw, 510px);
@@ -2306,6 +2320,9 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .product-slider-kicker { font-size: 10px; }
   .product-slider-controls { gap: 12px; }
 }
+
+/* Reserve scroll room so the next category can align fully at the left edge. */
+.product-options { padding-right: var(--product-track-end-space, 0px) !important; }
 
 /* Keep adjacent homepage bands connected with a subtle visual divider. */
 .product-showcase { margin: 0; }

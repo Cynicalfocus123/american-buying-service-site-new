@@ -135,6 +135,7 @@ if (productFeature && productOptions.length) {
   const productNote = productFeature.querySelector("[data-product-note]");
   const productFeatureLink = productFeature.querySelector(".product-feature-link");
   const productCurrent = productCarousel?.querySelector("[data-product-current]");
+  const productProgress = productCarousel?.querySelector(".product-progress");
   const previousProduct = productCarousel?.querySelector("[data-product-previous]");
   const nextProduct = productCarousel?.querySelector("[data-product-next]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -142,6 +143,11 @@ if (productFeature && productOptions.length) {
   let controlScrollInProgress = false;
   let controlScrollTimer;
   const stepQueue = [];
+
+  const syncProductTrackSpace = () => {
+    if (!productTrack) return;
+    productTrack.style.setProperty("--product-track-end-space", `${productTrack.clientWidth}px`);
+  };
 
   const showProduct = (option, scrollIntoView = false) => {
     productFeature.dataset.category = option.dataset.category;
@@ -152,6 +158,7 @@ if (productFeature && productOptions.length) {
     const productIndex = Array.from(productOptions).indexOf(option);
     activeProductIndex = productIndex;
     if (productCurrent) productCurrent.textContent = String(productIndex + 1).padStart(2, "0");
+    if (productProgress) productProgress.style.setProperty("--product-progress", String(productIndex));
     productOptions.forEach((item) => {
       item.setAttribute("aria-pressed", String(item === option));
     });
@@ -163,12 +170,15 @@ if (productFeature && productOptions.length) {
     if (nextProduct) nextProduct.disabled = activeProductIndex === productOptions.length - 1;
   };
 
-  const scrollToProduct = (option) => {
+  const scrollToProduct = (option, instant = false) => {
+    const showFollowingCard = window.matchMedia("(min-width: 761px)").matches;
+    const followingIndex = (activeProductIndex + 1) % productOptions.length;
+    const targetOption = showFollowingCard ? productOptions[followingIndex] : option;
     const target = Math.max(0, Math.min(
-      option.offsetLeft - (productTrack.clientWidth - option.offsetWidth) / 2,
+      targetOption.offsetLeft,
       productTrack.scrollWidth - productTrack.clientWidth
     ));
-    productTrack.scrollTo({ left: target, behavior: reduceMotion.matches ? "auto" : "smooth" });
+    productTrack.scrollTo({ left: target, behavior: instant || reduceMotion.matches ? "auto" : "smooth" });
   };
 
   const finishControlStep = () => {
@@ -199,9 +209,6 @@ if (productFeature && productOptions.length) {
   };
 
   productOptions.forEach((option) => {
-    option.addEventListener("mouseenter", () => {
-      if (window.matchMedia("(hover: hover)").matches) showProduct(option);
-    });
     option.addEventListener("focus", () => showProduct(option));
     option.addEventListener("click", () => {
       showProduct(option, true);
@@ -236,6 +243,12 @@ if (productFeature && productOptions.length) {
 
   showProduct(productOptions[0]);
   updateProductControls();
+  syncProductTrackSpace();
+  scrollToProduct(productOptions[0], true);
+  window.addEventListener("resize", () => {
+    syncProductTrackSpace();
+    scrollToProduct(productOptions[activeProductIndex], true);
+  }, { passive: true });
 }
 
 document.querySelector("#year").textContent = new Date().getFullYear();
