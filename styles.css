@@ -2250,6 +2250,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 }
 .product-slider-control:hover,
 .product-slider-control:focus-visible { border-color: var(--accent); background: var(--accent); color: white; }
+.product-slider-control:disabled { border-color: rgba(10,27,50,.12); color: rgba(10,27,50,.32); cursor: not-allowed; }
 .product-slider-count { margin: 0 auto; color: var(--navy); font-size: 14px; font-weight: 800; }
 .product-slider-count b { color: var(--accent); }
 

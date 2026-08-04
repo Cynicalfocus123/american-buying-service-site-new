@@ -138,6 +138,10 @@ if (productFeature && productOptions.length) {
   const previousProduct = productCarousel?.querySelector("[data-product-previous]");
   const nextProduct = productCarousel?.querySelector("[data-product-next]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let activeProductIndex = 0;
+  let controlScrollInProgress = false;
+  let controlScrollTimer;
+  const stepQueue = [];
 
   const showProduct = (option, scrollIntoView = false) => {
     productFeature.dataset.category = option.dataset.category;
@@ -146,17 +150,52 @@ if (productFeature && productOptions.length) {
     productNote.textContent = option.dataset.note;
     if (productFeatureLink) productFeatureLink.href = productPages[option.dataset.category];
     const productIndex = Array.from(productOptions).indexOf(option);
+    activeProductIndex = productIndex;
     if (productCurrent) productCurrent.textContent = String(productIndex + 1).padStart(2, "0");
     productOptions.forEach((item) => {
       item.setAttribute("aria-pressed", String(item === option));
     });
-    if (scrollIntoView) {
-      option.scrollIntoView({
-        behavior: reduceMotion.matches ? "auto" : "smooth",
-        block: "nearest",
-        inline: "center"
-      });
+    if (scrollIntoView && productTrack) scrollToProduct(option);
+  };
+
+  const updateProductControls = () => {
+    if (previousProduct) previousProduct.disabled = activeProductIndex === 0;
+    if (nextProduct) nextProduct.disabled = activeProductIndex === productOptions.length - 1;
+  };
+
+  const scrollToProduct = (option) => {
+    const target = Math.max(0, Math.min(
+      option.offsetLeft - (productTrack.clientWidth - option.offsetWidth) / 2,
+      productTrack.scrollWidth - productTrack.clientWidth
+    ));
+    productTrack.scrollTo({ left: target, behavior: reduceMotion.matches ? "auto" : "smooth" });
+  };
+
+  const finishControlStep = () => {
+    window.clearTimeout(controlScrollTimer);
+    controlScrollInProgress = false;
+    updateProductControls();
+    const direction = stepQueue.shift();
+    if (direction !== undefined) requestRelativeProduct(direction);
+  };
+
+  const requestRelativeProduct = (direction) => {
+    if (controlScrollInProgress) {
+      stepQueue.push(direction);
+      return;
     }
+    const nextIndex = Math.max(0, Math.min(productOptions.length - 1, activeProductIndex + direction));
+    if (nextIndex === activeProductIndex) {
+      updateProductControls();
+      return;
+    }
+    controlScrollInProgress = true;
+    showProduct(productOptions[nextIndex], true);
+    if (reduceMotion.matches) {
+      finishControlStep();
+      return;
+    }
+    controlScrollTimer = window.setTimeout(finishControlStep, 420);
   };
 
   productOptions.forEach((option) => {
@@ -170,14 +209,8 @@ if (productFeature && productOptions.length) {
     });
   });
 
-  const showRelativeProduct = (direction) => {
-    const activeIndex = Array.from(productOptions).findIndex((item) => item.getAttribute("aria-pressed") === "true");
-    const nextIndex = (activeIndex + direction + productOptions.length) % productOptions.length;
-    showProduct(productOptions[nextIndex], true);
-  };
-
-  previousProduct?.addEventListener("click", () => showRelativeProduct(-1));
-  nextProduct?.addEventListener("click", () => showRelativeProduct(1));
+  previousProduct?.addEventListener("click", () => requestRelativeProduct(-1));
+  nextProduct?.addEventListener("click", () => requestRelativeProduct(1));
 
   let scrollFrame;
   productTrack?.addEventListener("scroll", () => {
@@ -194,11 +227,15 @@ if (productFeature && productOptions.length) {
           nearestOption = option;
         }
       });
-      showProduct(nearestOption);
+      if (!controlScrollInProgress) {
+        showProduct(nearestOption);
+        updateProductControls();
+      }
     });
   }, { passive: true });
 
   showProduct(productOptions[0]);
+  updateProductControls();
 }
 
 document.querySelector("#year").textContent = new Date().getFullYear();
