@@ -125,6 +125,11 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 - The source, `live/`, and canonical Hostinger ZIP must represent the same verified
   website version in the same commit. Never push a site change with a stale `live/`
   folder or stale deployment ZIP.
+- Same-commit enforcement: every Git commit that changes a website source file must
+  also contain its matching `live/` file and the rebuilt canonical ZIP. Never make
+  a source-only website commit, a later `live/` catch-up commit, or a later ZIP
+  catch-up commit. Check the staged diff before committing; if any one of the three
+  versions is absent or differs, do not commit or push.
 - Before every site-change commit, compare SHA-256 hashes for each production file
   that exists in both the source root and `live/`. All matching paths must have
   identical hashes.
