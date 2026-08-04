@@ -2466,6 +2466,44 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .about-hero-media { min-height: 290px; }
 }
 
+/* Mobile uses compact square category cards instead of the desktop feature-card treatment. */
+@media (max-width: 760px) {
+  .product-options { padding: 0 20px 20px 0; gap: 16px; }
+  .product-option {
+    flex: 0 0 min(42vw, 210px);
+    min-height: 0;
+    padding: 0;
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    isolation: auto;
+    position: static;
+    overflow: visible;
+    color: var(--navy);
+  }
+  .product-option::before {
+    position: static;
+    z-index: auto;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 1;
+    background-position: center;
+    box-shadow: inset 0 0 0 1px rgba(10,27,50,.08);
+  }
+  .product-option::after { display: none; }
+  .product-option span {
+    font-size: clamp(15px, 4vw, 18px);
+    letter-spacing: -.025em;
+    line-height: 1.15;
+  }
+  .product-option:hover::before,
+  .product-option:focus-visible::before,
+  .product-option[aria-pressed="true"]::before {
+    box-shadow: inset 0 0 0 4px var(--accent);
+    transform: none;
+  }
+}
+
 /* Keep the Why Use section centered with the sections that follow it. */
 .why-abs { width: min(calc(100% - 48px), 1120px); text-align: center; }
 .why-abs h2 { margin-inline: auto; }
