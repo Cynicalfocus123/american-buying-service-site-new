@@ -2450,3 +2450,9 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 @media (max-width: 560px) {
   .why-abs-image { width: 100%; max-width: 400px; float: none; margin: 0 0 24px; display: block; }
 }
+
+/* Keep the Why Use section centered with the sections that follow it. */
+.why-abs { width: min(calc(100% - 48px), 1120px); text-align: center; }
+.why-abs h2 { margin-inline: auto; }
+.why-abs p { max-width: 960px; margin-right: auto; margin-left: auto; text-align: left; }
+@media (max-width: 560px) { .why-abs { width: calc(100% - 32px); } }
