@@ -2406,10 +2406,15 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .service-detail-page .site-header .desktop-nav a,
 .service-detail-page .site-header .nav-dropdown summary,
 .service-detail-page .site-header .header-tools button { color: white; }
-.service-detail-page .nav-mega { background: rgba(6,22,38,.98); color: white; }
-.service-detail-page .desktop-nav .nav-mega a { border-bottom-color: rgba(255,255,255,.16); color: white; }
+.service-detail-page .nav-mega {
+  background:
+    radial-gradient(circle at 92% 15%, rgba(244,84,37,.13), transparent 31%),
+    rgba(248,250,251,.98);
+  color: var(--navy);
+}
+.service-detail-page .desktop-nav .nav-mega a { border-bottom-color: rgba(10,27,50,.1); color: var(--navy); }
 .service-detail-page .desktop-nav .nav-mega a:hover,
-.service-detail-page .desktop-nav .nav-mega a:focus-visible { background: rgba(244,84,37,.22); color: white; }
+.service-detail-page .desktop-nav .nav-mega a:focus-visible { background: rgba(244,84,37,.09); color: #bd3615; }
 .service-detail-hero { min-height: clamp(420px, 45vw, 660px); position: relative; display: flex; align-items: center; overflow: hidden; isolation: isolate; background: var(--navy) var(--service-hero-position, center) / cover no-repeat; background-image: var(--service-hero-image); color: white; }
 .service-detail-hero::before { position: absolute; inset: 0; z-index: 0; background: linear-gradient(90deg, rgba(5,19,37,.82), rgba(5,19,37,.46) 48%, rgba(5,19,37,.16)); content: ""; }
 .service-detail-hero::after { position: absolute; right: -8%; bottom: -25%; left: -8%; z-index: 1; height: 47%; border-radius: 50% 50% 0 0 / 100% 100% 0 0; background: white; content: ""; transform: rotate(-4deg); transform-origin: center bottom; }
