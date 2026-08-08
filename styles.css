@@ -844,6 +844,11 @@ button { color: inherit; }
   color: var(--accent);
   transform: translateX(3px);
 }
+.footer-link-list a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
 .footer-contact address {
   display: grid;
   gap: 21px;
@@ -1143,6 +1148,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .footer-links h2,
   .footer-contact h2 { margin-bottom: 20px; }
   .footer-link-list { gap: 15px 22px; }
+  .footer-link-list a { min-height: 44px; display: inline-flex; align-items: center; }
   .footer-bottom { gap: 16px; flex-direction: column; }
 }
 
@@ -2383,6 +2389,105 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .about-hero-media::after { position: absolute; top: 0; right: 0; bottom: 0; width: 7%; background: var(--accent); clip-path: polygon(65% 0, 100% 0, 100% 100%, 0 100%); content: ""; }
 @media (max-width: 900px) { .about-hero { min-height: auto; grid-template-columns: 1fr; } .about-hero-copy { padding: 72px 40px; clip-path: none; } .about-hero-media { min-height: 390px; margin-left: 0; } }
 @media (max-width: 560px) { .about-hero-copy { padding: 58px 20px; } .about-hero h1 { font-size: clamp(40px, 11vw, 52px); } .about-hero-media { min-height: 290px; } }
+
+/* Legal pages */
+.legal-page {
+  background: var(--surface);
+}
+.legal-page .site-header {
+  position: relative;
+  background: rgba(6,22,38,.94);
+}
+.legal-main {
+  width: min(calc(100% - 48px), 920px);
+  margin: 0 auto;
+  padding: clamp(58px, 8vw, 104px) 0 clamp(82px, 10vw, 132px);
+}
+.legal-document {
+  padding: clamp(34px, 5vw, 68px) clamp(22px, 5vw, 74px);
+  background: var(--white);
+  box-shadow: 0 16px 50px rgba(10,27,50,.08);
+  overflow-wrap: anywhere;
+}
+.legal-document h1 {
+  margin: 0 0 clamp(34px, 5vw, 56px);
+  color: var(--navy);
+  font-family: var(--display);
+  font-size: clamp(44px, 6vw, 76px);
+  letter-spacing: -.055em;
+  line-height: .98;
+}
+.legal-document h2 {
+  margin: clamp(42px, 5vw, 60px) 0 18px;
+  padding-top: 8px;
+  border-top: 3px solid var(--accent);
+  color: var(--navy);
+  font-size: clamp(23px, 2.3vw, 31px);
+  line-height: 1.16;
+}
+.legal-document h2:first-of-type { margin-top: 0; }
+.legal-document h3 {
+  margin: 28px 0 11px;
+  color: var(--navy);
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.35;
+}
+.legal-document p,
+.legal-document li {
+  margin: 0 0 18px;
+  color: #34485d;
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.72;
+}
+.legal-document h2 + p,
+.legal-document h3 + p { margin-top: 0; }
+.legal-document .legal-list {
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+.legal-document .legal-list li {
+  margin: 0;
+  padding: 7px 0 7px 24px;
+  position: relative;
+}
+.legal-document .legal-list li::before {
+  position: absolute;
+  top: 1.03em;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+}
+.legal-document .legal-list li.legal-list-nested { padding-left: 48px; }
+.legal-document .legal-list li.legal-list-nested::before {
+  left: 24px;
+  width: 6px;
+  height: 6px;
+  background: var(--muted);
+}
+.legal-document a {
+  color: #bd3615;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.legal-document a:hover,
+.legal-document a:focus-visible { color: var(--navy); }
+.legal-document a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+@media (max-width: 560px) {
+  .legal-main { width: calc(100% - 32px); padding-top: 38px; }
+  .legal-document { padding: 28px 20px 36px; }
+  .legal-document h1 { font-size: clamp(40px, 12vw, 54px); }
+  .legal-document p,
+  .legal-document li { font-size: 16px; line-height: 1.68; }
+}
 
 /* Product category detail pages */
 .product-detail-page .site-header { position: relative; background: rgba(6,22,38,.92); }
