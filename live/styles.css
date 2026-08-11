@@ -2551,9 +2551,11 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .service-detail-hero::after { right: -14%; bottom: -25%; left: -14%; height: 43%; }
   .service-title-panel { max-width: 680px; }
   .service-feature, .service-feature-second { grid-template-columns: 1fr; }
+  .service-feature { border-bottom: 0; }
+  .service-feature-first { margin-top: clamp(28px, 4vw, 40px); }
   .service-feature-image { order: 1; }
   .service-feature-copy { order: 2; }
-  .service-feature-second { margin-top: clamp(40px, 6vw, 64px); }
+  .service-feature-second { margin-top: clamp(24px, 3vw, 32px); }
   .service-feature-image { min-height: clamp(420px, 58vw, 600px); }
   .service-feature-copy { padding-top: 72px; padding-bottom: 72px; }
   .service-feature-copy h2, .service-contact-cta h2 { font-size: clamp(32px, 5vw, 48px); }
@@ -2566,7 +2568,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .service-title-panel h1 { font-size: clamp(40px, 8vw, 58px); }
   .service-feature, .service-feature-second, .service-contact-cta { grid-template-columns: 1fr; }
   .service-feature { width: 100%; }
-  .service-feature-second { margin-top: 32px; }
+  .service-feature-first { margin-top: 28px; }
+  .service-feature-second { margin-top: 24px; }
   .service-feature-copy, .service-feature-first .service-feature-copy, .service-feature-second .service-feature-copy { padding: 64px 28px; }
   .service-feature-image { min-height: 360px; aspect-ratio: 4 / 3; }
   .service-feature-copy .button { margin-top: 24px; }
@@ -2579,7 +2582,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .service-detail-hero-inner, .service-contact-cta { width: calc(100% - 32px); }
   .service-title-panel h1 { font-size: clamp(36px, 10.5vw, 48px); }
   .service-feature-copy, .service-feature-first .service-feature-copy, .service-feature-second .service-feature-copy { padding: 56px 20px; }
-  .service-feature-second { margin-top: 24px; }
+  .service-feature-first { margin-top: 24px; }
+  .service-feature-second { margin-top: 20px; }
   .service-feature-image { min-height: 300px; }
   .service-feature-copy h2, .service-contact-cta h2 { font-size: clamp(31px, 9.5vw, 42px); }
   .service-feature-copy p:not(.eyebrow), .service-contact-cta p:last-child { font-size: 16px; }
