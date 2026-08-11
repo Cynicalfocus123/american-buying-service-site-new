@@ -2529,7 +2529,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .service-title-panel::after { display: none; }
 .service-title-panel .eyebrow { margin-bottom: 18px; color: var(--accent); text-shadow: 0 2px 12px rgba(0,0,0,.4); }
 .service-title-panel h1 { max-width: 720px; margin: 0; color: white; font-family: var(--display); font-size: clamp(46px, 5.5vw, 82px); font-weight: 850; letter-spacing: -.06em; line-height: .95; text-shadow: 0 3px 22px rgba(0,0,0,.42); text-wrap: balance; }
-.service-feature { width: 100%; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; align-items: stretch; border-bottom: 1px solid rgba(10,27,50,.12); }
+.service-feature { width: 100%; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; align-items: stretch; }
 .service-feature-second { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 .service-feature-copy { width: 100%; max-width: none; padding: clamp(76px, 9vw, 140px) clamp(30px, 5vw, 96px); align-self: center; }
 .service-feature-first .service-feature-copy { padding-left: max(30px, 12vw); }
