@@ -787,7 +787,7 @@ button { color: inherit; }
   padding: 48px 24px;
   background:
     linear-gradient(90deg, rgba(5,20,38,.94), rgba(5,20,38,.7)),
-    url("american-buying-service-logo.webp") center 53% / cover no-repeat;
+    url("american-buying-service-logo-optimized.webp") center 53% / cover no-repeat;
   color: white;
   text-align: center;
 }
