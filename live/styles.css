@@ -919,7 +919,7 @@ body[data-concept="horizon"] .next-step h2,
 body[data-concept="horizon"] .info-feature > h3,
 body[data-concept="horizon"] .story-copy h3,
 body[data-concept="horizon"] .service-band-heading h3 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display);
   letter-spacing: -.045em;
   text-transform: none;
 }
@@ -2751,7 +2751,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .contact-form-column h1 {
   margin: 0;
   color: #292b31;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display);
   font-size: clamp(56px, 7.3vw, 112px);
   font-weight: 700;
   letter-spacing: -.065em;
@@ -2772,7 +2772,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   align-items: center;
   gap: 12px;
   color: var(--navy);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display);
   font-size: clamp(20px, 1.7vw, 28px);
   font-weight: 700;
   letter-spacing: -.035em;
@@ -2872,7 +2872,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .contact-partner-card h2 {
   max-width: 340px;
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display);
   font-size: clamp(34px, 3vw, 48px);
   letter-spacing: -.045em;
   line-height: 1.03;
@@ -2910,7 +2910,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 }
 .contact-partner-item h3 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display);
   font-size: clamp(22px, 1.9vw, 30px);
   letter-spacing: -.035em;
   line-height: 1.1;
@@ -2941,7 +2941,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .locations-heading .eyebrow { margin-bottom: 15px; color: #385068; }
 .locations-heading h2 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display);
   font-size: clamp(52px, 7vw, 106px);
   letter-spacing: -.065em;
   line-height: .92;
@@ -2962,7 +2962,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 }
 .location-card h3 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display);
   font-size: clamp(28px, 2.4vw, 39px);
   letter-spacing: -.04em;
   line-height: 1.03;
