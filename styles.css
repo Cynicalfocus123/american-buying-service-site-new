@@ -2628,7 +2628,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   min-height: clamp(560px, 47vw, 680px);
   grid-template-columns: minmax(0, 40%) minmax(0, 60%);
 }
-.about-hero-copy { clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%); }
+.about-hero-copy { clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%); }
+.about-hero-copy > * { transform: translateX(clamp(24px, 2.8vw, 40px)); }
 .about-hero-media {
   margin-left: -7%;
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
@@ -2650,6 +2651,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .why-abs-image { width: min(46%, 310px); margin-right: 28px; }
   .about-hero { grid-template-columns: 1fr; }
   .about-hero-copy { clip-path: none; }
+  .about-hero-copy > * { transform: none; }
   .about-hero-media { min-height: 390px; margin-left: 0; clip-path: none; }
 }
 @media (max-width: 560px) {
