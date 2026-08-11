@@ -2551,6 +2551,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   .service-detail-hero::after { right: -14%; bottom: -25%; left: -14%; height: 43%; }
   .service-title-panel { max-width: 680px; }
   .service-feature, .service-feature-second { grid-template-columns: 1fr; }
+  .service-feature-image { order: 1; }
+  .service-feature-copy { order: 2; }
   .service-feature-second { margin-top: clamp(40px, 6vw, 64px); }
   .service-feature-image { min-height: clamp(420px, 58vw, 600px); }
   .service-feature-copy { padding-top: 72px; padding-bottom: 72px; }
