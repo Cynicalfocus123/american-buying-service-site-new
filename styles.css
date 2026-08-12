@@ -2556,6 +2556,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 }
 @media (max-width: 760px) {
   .service-detail-hero { min-height: 430px; }
+  .service-detail-hero::after { display: none; }
   .service-detail-hero::after { height: clamp(80px, 22vw, 112px); }
   .service-detail-hero-inner, .service-contact-cta { width: calc(100% - 40px); }
   .service-title-panel { width: 100%; }
