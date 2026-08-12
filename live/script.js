@@ -234,6 +234,31 @@ const arrangeFooterContactLinks = () => {
 
 arrangeFooterContactLinks();
 
+const contactForm = document.querySelector("[data-contact-form]");
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
+
+    const formData = new FormData(contactForm);
+    const fields = [
+      ["First name", formData.get("first-name")],
+      ["Last name", formData.get("last-name")],
+      ["Email address", formData.get("email")],
+      ["Phone number", formData.get("phone")],
+      ["Message", formData.get("message")]
+    ];
+    const body = fields
+      .filter(([, value]) => String(value ?? "").trim())
+      .map(([label, value]) => `${label}: ${String(value).trim()}`)
+      .join("\n\n");
+    const mailto = new URL("mailto:info@americanbuyingservice.com");
+    mailto.searchParams.set("subject", "Contact request from American Buying Service website");
+    mailto.searchParams.set("body", body);
+    window.location.assign(mailto.href);
+  });
+}
+
 const SITE_SEARCH_PAGES = Object.freeze([
   { href: "index.html", title: "Home" },
   { href: "about.html", title: "About Us" },

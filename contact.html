@@ -44,14 +44,14 @@
         <p class="contact-intro">Looking for U.S. market-entry, buying, sourcing, fulfillment, or logistics support? Complete the form below and tell us a little about what you are building.</p>
         <a class="contact-email" href="mailto:info@americanbuyingservice.com"><span class="contact-email-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"></path><path d="m5 8 7 5 7-5"></path></svg></span>info@americanbuyingservice.com</a>
 
-        <form class="contact-form" action="mailto:info@americanbuyingservice.com" method="post" enctype="text/plain">
+        <form class="contact-form" data-contact-form autocomplete="off">
           <div class="contact-form-grid">
-            <div class="contact-field"><label for="first-name">First name <span aria-hidden="true">*</span></label><input id="first-name" name="first-name" type="text" autocomplete="given-name" required></div>
-            <div class="contact-field"><label for="last-name">Last name <span aria-hidden="true">*</span></label><input id="last-name" name="last-name" type="text" autocomplete="family-name" required></div>
-            <div class="contact-field"><label for="email">Email address <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
-            <div class="contact-field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="contact-field"><label for="first-name">First name <span aria-hidden="true">*</span></label><input id="first-name" name="first-name" type="text" required></div>
+            <div class="contact-field"><label for="last-name">Last name <span aria-hidden="true">*</span></label><input id="last-name" name="last-name" type="text" required></div>
+            <div class="contact-field"><label for="email">Email address <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" required></div>
+            <div class="contact-field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel"></div>
           </div>
-          <div class="contact-field contact-message-field"><label for="message">Message</label><textarea id="message" name="message" rows="6"></textarea></div>
+          <div class="contact-field contact-message-field"><label for="message">Message</label><textarea id="message" name="message" rows="6" maxlength="3000"></textarea></div>
           <label class="contact-consent" for="consent"><input id="consent" name="consent" type="checkbox" value="yes"><span>I consent to receiving emails from American Buying Service. <a href="privacy-policy.html">Privacy Policy</a>.</span></label>
           <button class="button button-primary contact-submit" type="submit">Submit</button>
         </form>
