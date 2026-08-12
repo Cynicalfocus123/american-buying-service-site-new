@@ -220,15 +220,15 @@ const arrangeFooterContactLinks = () => {
     const footerLinks = footer.querySelector(".footer-link-list");
     if (!footerContact || !footerLinks) return;
 
+    const footerHeading = footerContact.querySelector("h2");
+    if (footerHeading) footerHeading.textContent = "Contact Information";
+    footerContact.querySelector("address")?.remove();
+
     const contactLink = Array.from(footerLinks.querySelectorAll('a[href="contact.html"]'))[0];
     if (contactLink) {
       contactLink.classList.add("footer-contact-link");
-      footerContact.querySelector("h2")?.insertAdjacentElement("afterend", contactLink);
+      footerHeading?.insertAdjacentElement("afterend", contactLink);
     }
-
-    footerContact.querySelectorAll('a[href^="mailto:"]').forEach((emailLink) => {
-      emailLink.closest(".contact-row")?.remove();
-    });
   });
 };
 
