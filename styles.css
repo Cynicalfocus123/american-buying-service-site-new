@@ -2345,6 +2345,7 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .about-copy, .about-services-copy, .about-closing { display: grid; gap: 22px; }
 .about-copy p, .about-services-copy p, .about-closing p { margin: 0; color: #43566a; font-size: clamp(16px, 1.35vw, 19px); line-height: 1.72; }
 .about-stats { border-top: 1px solid rgba(10,27,50,.13); }
+.about-stats .about-section-heading .eyebrow { display: none; }
 .about-stat-grid { margin-top: clamp(36px, 5vw, 64px); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(28px, 4vw, 64px); }
 .about-stat { min-height: 0; padding: 0; background: transparent; }
 .stat-line { display: none; }
