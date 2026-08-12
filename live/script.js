@@ -94,6 +94,7 @@ document.addEventListener("click", (event) => {
 
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
+  if (document.querySelector(".site-search-dialog[open]")) return;
   desktopDropdowns.forEach((dropdown) => {
     dropdown.open = false;
   });
@@ -212,5 +213,211 @@ if (productFeature && productOptions.length) {
     scrollToProduct(activeProductIndex, true);
   }, { passive: true });
 }
+
+const SITE_SEARCH_PAGES = Object.freeze([
+  { href: "index.html", title: "Home" },
+  { href: "about.html", title: "About Us" },
+  { href: "contact.html", title: "Contact Us" },
+  { href: "brand-building-service.html", title: "Brand Building Service" },
+  { href: "warehousing-fulfillment-service.html", title: "Warehousing and Fulfillment" },
+  { href: "drop-ship-service.html", title: "Drop Ship Service" },
+  { href: "sourcing-procurement-service.html", title: "Sourcing and Procurement" },
+  { href: "marketplace-ecommerce-sales.html", title: "Marketplace and Ecommerce Sales" },
+  { href: "virtual-office-support.html", title: "Virtual Office Support" },
+  { href: "sales-marketing-service.html", title: "Sales and Marketing" },
+  { href: "trade-show-representation.html", title: "Trade Show Representation" },
+  { href: "formulation-development-service.html", title: "Formulation and Development Service" },
+  { href: "packaging-design.html", title: "Packaging and Design" },
+  { href: "consumer-electronics.html", title: "Consumer Electronics" },
+  { href: "food-and-beverage.html", title: "Food and Beverage" },
+  { href: "garment-accessories.html", title: "Garment and Accessories" },
+  { href: "home-decor-furniture.html", title: "Home Decor and Furniture" },
+  { href: "otop-global.html", title: "OTOP Global" },
+  { href: "sport-fitness.html", title: "Sport and Fitness" },
+  { href: "privacy-policy.html", title: "Privacy Policy" },
+  { href: "terms-and-conditions.html", title: "Terms and Conditions" }
+]);
+
+const normalizeSearchQuery = (value) => String(value ?? "")
+  .normalize("NFKC")
+  .replace(/[\u0000-\u001F\u007F]/g, " ")
+  .replace(/\s+/g, " ")
+  .trim()
+  .slice(0, 120);
+
+const searchTextCache = new Map();
+
+const readSearchPage = async (page) => {
+  if (searchTextCache.has(page.href)) return searchTextCache.get(page.href);
+
+  const pageUrl = new URL(page.href, window.location.href);
+  if (pageUrl.origin !== window.location.origin) return "";
+
+  const response = await fetch(pageUrl.href, {
+    cache: "force-cache",
+    credentials: "same-origin",
+    redirect: "error"
+  });
+  if (!response.ok) return "";
+
+  const source = new DOMParser().parseFromString(await response.text(), "text/html");
+  source.querySelectorAll("script, style, noscript, template").forEach((element) => element.remove());
+  const pageContent = source.querySelector("main")?.textContent ?? source.body?.textContent ?? "";
+  const text = `${page.title} ${pageContent}`.replace(/\s+/g, " ").trim().toLocaleLowerCase("en-US");
+  searchTextCache.set(page.href, text);
+  return text;
+};
+
+const createSiteSearch = () => {
+  const headerSearchTriggers = Array.from(document.querySelectorAll('.header-tools button[aria-label="Search"]'));
+  if (!headerSearchTriggers.length) return;
+
+  const dialog = document.createElement("dialog");
+  dialog.className = "site-search-dialog";
+  dialog.setAttribute("aria-labelledby", "site-search-title");
+
+  const panel = document.createElement("div");
+  panel.className = "site-search-panel";
+  const dialogHeader = document.createElement("div");
+  dialogHeader.className = "site-search-header";
+  const title = document.createElement("h2");
+  title.id = "site-search-title";
+  title.textContent = "Search the site";
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "site-search-close";
+  close.setAttribute("aria-label", "Close search");
+  close.textContent = "×";
+  dialogHeader.append(title, close);
+
+  const form = document.createElement("form");
+  form.className = "site-search-form";
+  form.noValidate = true;
+  const label = document.createElement("label");
+  label.htmlFor = "site-search-input";
+  label.textContent = "Search all pages";
+  const formRow = document.createElement("div");
+  formRow.className = "site-search-form-row";
+  const input = document.createElement("input");
+  input.id = "site-search-input";
+  input.name = "q";
+  input.type = "search";
+  input.autocomplete = "off";
+  input.maxLength = 120;
+  input.placeholder = "Search services, products, locations, and more";
+  const submit = document.createElement("button");
+  submit.type = "submit";
+  submit.className = "button button-primary";
+  submit.textContent = "Search";
+  formRow.append(input, submit);
+  form.append(label, formRow);
+
+  const status = document.createElement("p");
+  status.className = "site-search-status";
+  status.setAttribute("role", "status");
+  status.setAttribute("aria-live", "polite");
+  const results = document.createElement("ul");
+  results.className = "site-search-results";
+  panel.append(dialogHeader, form, status, results);
+  dialog.append(panel);
+  document.body.append(dialog);
+
+  let lastSearchTrigger = null;
+  const searchTriggers = [...headerSearchTriggers];
+  const mobileSearchTrigger = document.createElement("button");
+  mobileSearchTrigger.type = "button";
+  mobileSearchTrigger.className = "mobile-search-trigger";
+  mobileSearchTrigger.textContent = "Search";
+  mobileSearchTrigger.setAttribute("aria-label", "Search the site");
+  if (mobileNav) {
+    mobileNav.prepend(mobileSearchTrigger);
+    searchTriggers.push(mobileSearchTrigger);
+  }
+
+  const clearSearchResults = () => {
+    status.textContent = "";
+    results.replaceChildren();
+  };
+
+  const openSearch = (trigger) => {
+    lastSearchTrigger = trigger;
+    clearSearchResults();
+    input.value = "";
+    searchTriggers.forEach((button) => button.setAttribute("aria-expanded", "true"));
+    dialog.showModal();
+    window.requestAnimationFrame(() => input.focus());
+  };
+
+  const renderSearchResults = (matches) => {
+    results.replaceChildren();
+    matches.forEach((page) => {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = page.href;
+      const resultTitle = document.createElement("strong");
+      resultTitle.textContent = page.title;
+      const resultPath = document.createElement("span");
+      resultPath.textContent = page.href.replace(".html", "").replaceAll("-", " ");
+      link.append(resultTitle, resultPath);
+      item.append(link);
+      results.append(item);
+    });
+  };
+
+  searchTriggers.forEach((trigger) => {
+    trigger.setAttribute("aria-haspopup", "dialog");
+    trigger.setAttribute("aria-expanded", "false");
+    trigger.addEventListener("click", () => openSearch(trigger));
+  });
+
+  close.addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("close", () => {
+    searchTriggers.forEach((button) => button.setAttribute("aria-expanded", "false"));
+    lastSearchTrigger?.focus();
+  });
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const query = normalizeSearchQuery(input.value);
+    input.value = query;
+    clearSearchResults();
+    if (!query) {
+      status.textContent = "Enter a search term.";
+      input.focus();
+      return;
+    }
+
+    submit.disabled = true;
+    status.textContent = "Searching the site…";
+    const terms = query.toLocaleLowerCase("en-US").split(" ").filter(Boolean);
+    try {
+      const indexedPages = await Promise.all(SITE_SEARCH_PAGES.map(async (page) => ({
+        page,
+        text: await readSearchPage(page)
+      })));
+      const matches = indexedPages
+        .filter(({ text }) => terms.every((term) => text.includes(term)))
+        .sort((first, second) => {
+          const firstTitle = first.page.title.toLocaleLowerCase("en-US");
+          const secondTitle = second.page.title.toLocaleLowerCase("en-US");
+          return Number(terms.every((term) => secondTitle.includes(term))) - Number(terms.every((term) => firstTitle.includes(term)));
+        })
+        .map(({ page }) => page);
+      status.textContent = matches.length
+        ? `${matches.length} result${matches.length === 1 ? "" : "s"} found for “${query}”.`
+        : `No results found for “${query}”.`;
+      renderSearchResults(matches);
+    } catch {
+      status.textContent = "Search is temporarily unavailable. Please try again.";
+    } finally {
+      submit.disabled = false;
+    }
+  });
+};
+
+createSiteSearch();
 
 document.querySelector("#year").textContent = new Date().getFullYear();
