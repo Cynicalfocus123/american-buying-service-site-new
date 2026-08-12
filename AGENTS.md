@@ -7,6 +7,15 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 
 - Before starting any task or making any workspace change, read `AGENTS.md`,
   `DESIGNER.md`, and `WEIGHT.md` in full. Do this again for every new task.
+- At the start of every task, read every in-scope project Markdown file (`*.md`)
+  in full. This includes root-level Markdown files; ignore only dependency
+  Markdown under `tmp/` unless the task touches it.
+- At task start, add a short `Start` entry to `TASK-LOG.md`. Before the final
+  handoff, add a short `Finish` entry. A task is incomplete if no project
+  Markdown file was updated.
+- For website tasks, include the Markdown checkpoint in the same commit as the
+  matching source, `live/`, and canonical ZIP changes. Keep Markdown outside
+  `live/` and the Hostinger ZIP.
 - `DESIGNER.md` governs visual consistency and responsive behavior.
 - `WEIGHT.md` governs asset optimization, budgets, and deployment-weight checks.
 - When instructions conflict, follow the user's newest explicit request first,
