@@ -166,6 +166,9 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
   without creating an extra enclosing folder.
 - Exclude source-only files, documentation, screenshots, backups, old ZIPs,
   temporary tools, source maps, package caches, `node_modules`, and `.git`.
+- Never retain temporary ZIP extraction or verification folders in the project root.
+  Remove them after a successful verification. Keep only `live/` and the canonical
+  `american-buying-service-hostinger-public_html-ready.zip` deployment package.
 - Before delivery, verify:
   - archive readability and CRC;
   - safe, unique, forward-slash entry paths;
