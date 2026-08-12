@@ -239,7 +239,7 @@ const arrangeFooterContactLinks = () => {
     footerContact.querySelector("address")?.remove();
 
     footerLinks.querySelectorAll("a").forEach((link) => {
-      if (["Complaint", "Our Mission"].includes(link.textContent.trim())) link.remove();
+      if (["Affiliate Office", "Complaint", "Our Mission"].includes(link.textContent.trim())) link.remove();
     });
 
     const contactLink = Array.from(footerLinks.querySelectorAll('a[href="contact.html"]'))[0];
