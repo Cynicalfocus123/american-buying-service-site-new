@@ -214,6 +214,26 @@ if (productFeature && productOptions.length) {
   }, { passive: true });
 }
 
+const arrangeFooterContactLinks = () => {
+  document.querySelectorAll(".site-footer").forEach((footer) => {
+    const footerContact = footer.querySelector(".footer-contact");
+    const footerLinks = footer.querySelector(".footer-link-list");
+    if (!footerContact || !footerLinks) return;
+
+    const contactLink = Array.from(footerLinks.querySelectorAll('a[href="contact.html"]'))[0];
+    if (contactLink) {
+      contactLink.classList.add("footer-contact-link");
+      footerContact.querySelector("h2")?.insertAdjacentElement("afterend", contactLink);
+    }
+
+    footerContact.querySelectorAll('a[href^="mailto:"]').forEach((emailLink) => {
+      emailLink.closest(".contact-row")?.remove();
+    });
+  });
+};
+
+arrangeFooterContactLinks();
+
 const SITE_SEARCH_PAGES = Object.freeze([
   { href: "index.html", title: "Home" },
   { href: "about.html", title: "About Us" },

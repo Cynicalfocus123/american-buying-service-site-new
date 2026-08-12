@@ -2973,6 +2973,30 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   font-size: 16px;
   line-height: 1.5;
 }
+.location-detail {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 9px;
+  display: block;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.location-detail:hover,
+.location-detail:focus-visible { color: var(--accent); }
+.footer-contact-link {
+  min-height: 44px;
+  margin: -8px 0 18px;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255,255,255,.85);
+  font-size: 14px;
+  font-weight: 750;
+}
+.footer-contact-link:hover,
+.footer-contact-link:focus-visible { color: var(--accent); }
 @media (max-width: 900px) {
   .contact-section { grid-template-columns: 1fr; }
   .contact-partner-card { min-height: 0; }
