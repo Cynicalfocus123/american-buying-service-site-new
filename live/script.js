@@ -1,4 +1,7 @@
 const video = document.querySelector("#hero-video");
+if (video) {
+  video.src = window.matchMedia("(max-width: 760px)").matches ? video.dataset.mobileSrc : video.dataset.desktopSrc;
+}
 const menuButton = document.querySelector(".nav-trigger");
 const mobileNav = document.querySelector(".mobile-nav");
 const desktopDropdowns = document.querySelectorAll(".desktop-nav .nav-dropdown");
