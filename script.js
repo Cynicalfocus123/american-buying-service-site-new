@@ -9,6 +9,20 @@ video?.play().catch(() => {
   // Browsers may defer autoplay until the page is visible.
 });
 
+const countryStat = document.querySelector(".about-page .about-stat-grid .about-stat:last-child");
+if (countryStat) {
+  const value = countryStat.querySelector("strong");
+  const label = countryStat.querySelector("p");
+  if (value && label) {
+    value.removeAttribute("data-count");
+    const counter = document.createElement("span");
+    counter.dataset.count = "75";
+    counter.textContent = "0";
+    value.replaceChildren(counter, document.createTextNode("+"));
+    label.textContent = "countries served";
+  }
+}
+
 const statSection = document.querySelector("[data-stat-section]");
 if (statSection) {
   const counters = statSection.querySelectorAll("[data-count]");
