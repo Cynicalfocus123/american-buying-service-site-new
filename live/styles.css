@@ -3149,3 +3149,63 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
   width: 100%;
   margin-inline: 0;
 }
+
+/* Responsive and deferred image delivery. */
+.solution-panel[data-solution="brand-building"] { --responsive-bg: image-set(url("assets/solutions/brand-building-service-768.webp") 1x, url("assets/solutions/brand-building-service.webp") 2x); background-image: none; }
+.solution-panel[data-solution="drop-ship"] { --responsive-bg: image-set(url("assets/solutions/drop-ship-service-768.webp") 1x, url("assets/solutions/drop-ship-service.webp") 2x); background-image: none; }
+.solution-panel[data-solution="warehousing-fulfillment"] { --responsive-bg: image-set(url("assets/solutions/warehousing-fulfillment-service-768.webp") 1x, url("assets/solutions/warehousing-fulfillment-service.webp") 2x); background-image: none; }
+.solution-panel[data-solution="virtual-office"] { --responsive-bg: image-set(url("assets/solutions/virtual-office-support-768.webp") 1x, url("assets/solutions/virtual-office-support.webp") 2x); background-image: none; }
+.solution-panel[data-solution="trade-show"] { --responsive-bg: image-set(url("assets/solutions/trade-show-representation-768.webp") 1x, url("assets/solutions/trade-show-representation.webp") 2x); background-image: none; }
+.solution-panel[data-solution="sales-marketing"] { --responsive-bg: image-set(url("assets/solutions/sales-marketing-service-768.webp") 1x, url("assets/solutions/sales-marketing-service.webp") 2x); background-image: none; }
+.solution-panel[data-solution="sourcing-procurement"] { --responsive-bg: image-set(url("assets/solutions/sourcing-procurement-service-768.webp") 1x, url("assets/solutions/sourcing-procurement-service.webp") 2x); background-image: none; }
+.solution-panel[data-solution="marketplace-ecommerce"] { --responsive-bg: image-set(url("assets/solutions/marketplace-ecommerce-sales-768.webp") 1x, url("assets/solutions/marketplace-ecommerce-sales.webp") 2x); background-image: none; }
+.solution-panel[data-solution="formulation-development"] { --responsive-bg: image-set(url("assets/solutions/formulation-development-service-768.webp") 1x, url("assets/solutions/formulation-development-service.webp") 2x); background-image: none; }
+.solution-panel[data-solution="packaging-design"] { --responsive-bg: image-set(url("assets/solutions/packaging-design-768.webp") 1x, url("assets/solutions/packaging-design.webp") 2x); background-image: none; }
+.solution-panel.is-media-ready { background-image: var(--responsive-bg); }
+
+.product-feature { --responsive-bg: image-set(url("assets/product-categories/otop-global-768.webp") 1x, url("assets/product-categories/otop-global.webp") 2x); background-image: none; }
+.product-feature[data-category="electronics"] { --responsive-bg: image-set(url("assets/product-categories/consumer-electronics-768.webp") 1x, url("assets/product-categories/consumer-electronics.webp") 2x); }
+.product-feature[data-category="food"] { --responsive-bg: image-set(url("assets/product-categories/food-and-beverage-768.webp") 1x, url("assets/product-categories/food-and-beverage.webp") 2x); }
+.product-feature[data-category="sport"] { --responsive-bg: image-set(url("assets/product-categories/sports-and-fitness-768.webp") 1x, url("assets/product-categories/sports-and-fitness.webp") 2x); }
+.product-feature[data-category="home"] { --responsive-bg: image-set(url("assets/product-categories/home-decor-768.webp") 1x, url("assets/product-categories/home-decor.webp") 2x); }
+.product-feature[data-category="garment"] { --responsive-bg: image-set(url("assets/product-categories/clothing-and-accessories-768.webp") 1x, url("assets/product-categories/clothing-and-accessories.webp") 2x); }
+.product-feature.is-media-ready { background-image: var(--responsive-bg); }
+
+.product-option::before { background-image: none; }
+.product-option[data-category="otop"] { --responsive-bg: image-set(url("assets/product-categories/otop-global-768.webp") 1x, url("assets/product-categories/otop-global.webp") 2x); }
+.product-option[data-category="electronics"] { --responsive-bg: image-set(url("assets/product-categories/consumer-electronics-768.webp") 1x, url("assets/product-categories/consumer-electronics.webp") 2x); }
+.product-option[data-category="food"] { --responsive-bg: image-set(url("assets/product-categories/food-and-beverage-768.webp") 1x, url("assets/product-categories/food-and-beverage.webp") 2x); }
+.product-option[data-category="sport"] { --responsive-bg: image-set(url("assets/product-categories/sports-and-fitness-768.webp") 1x, url("assets/product-categories/sports-and-fitness.webp") 2x); }
+.product-option[data-category="home"] { --responsive-bg: image-set(url("assets/product-categories/home-decor-768.webp") 1x, url("assets/product-categories/home-decor.webp") 2x); }
+.product-option[data-category="garment"] { --responsive-bg: image-set(url("assets/product-categories/clothing-and-accessories-768.webp") 1x, url("assets/product-categories/clothing-and-accessories.webp") 2x); }
+.product-option.is-media-ready::before { background-image: var(--responsive-bg); }
+
+.product-detail-hero { background-image: var(--category-image); }
+.about-hero-media { background-image: linear-gradient(180deg, rgba(7,24,42,.06), rgba(7,24,42,.32)), image-set(url("assets/about/market-aisle-hero-768.webp") 1x, url("assets/about/market-aisle-hero.webp") 2x); }
+.next-step { --responsive-bg: image-set(url("assets/about/virtual-office-support-768.webp") 1x, url("assets/about/virtual-office-support.webp") 2x); background: #07182a; }
+.next-step.is-media-ready { background: linear-gradient(90deg, rgba(5,20,38,.94), rgba(5,20,38,.62)), var(--responsive-bg) center / cover no-repeat; }
+
+@media (max-width: 900px) {
+  .service-detail-hero { background-image: var(--service-hero-image-mobile, var(--service-hero-image)); }
+  .about-hero-media { background-image: linear-gradient(180deg, rgba(7,24,42,.06), rgba(7,24,42,.32)), url("assets/about/market-aisle-hero-768.webp"); }
+  .solution-panel[data-solution="brand-building"] { --responsive-bg: url("assets/solutions/brand-building-service-768.webp"); }
+  .solution-panel[data-solution="drop-ship"] { --responsive-bg: url("assets/solutions/drop-ship-service-768.webp"); }
+  .solution-panel[data-solution="warehousing-fulfillment"] { --responsive-bg: url("assets/solutions/warehousing-fulfillment-service-768.webp"); }
+  .solution-panel[data-solution="virtual-office"] { --responsive-bg: url("assets/solutions/virtual-office-support-768.webp"); }
+  .solution-panel[data-solution="trade-show"] { --responsive-bg: url("assets/solutions/trade-show-representation-768.webp"); }
+  .solution-panel[data-solution="sales-marketing"] { --responsive-bg: url("assets/solutions/sales-marketing-service-768.webp"); }
+  .solution-panel[data-solution="sourcing-procurement"] { --responsive-bg: url("assets/solutions/sourcing-procurement-service-768.webp"); }
+  .solution-panel[data-solution="marketplace-ecommerce"] { --responsive-bg: url("assets/solutions/marketplace-ecommerce-sales-768.webp"); }
+  .solution-panel[data-solution="formulation-development"] { --responsive-bg: url("assets/solutions/formulation-development-service-768.webp"); }
+  .solution-panel[data-solution="packaging-design"] { --responsive-bg: url("assets/solutions/packaging-design-768.webp"); }
+}
+
+@media (max-width: 760px) {
+  .product-detail-hero { background-image: var(--category-image-mobile, var(--category-image)); }
+  .product-option[data-category="otop"] { --responsive-bg: url("assets/product-categories/otop-global-768.webp"); }
+  .product-option[data-category="electronics"] { --responsive-bg: url("assets/product-categories/consumer-electronics-768.webp"); }
+  .product-option[data-category="food"] { --responsive-bg: url("assets/product-categories/food-and-beverage-768.webp"); }
+  .product-option[data-category="sport"] { --responsive-bg: url("assets/product-categories/sports-and-fitness-768.webp"); }
+  .product-option[data-category="home"] { --responsive-bg: url("assets/product-categories/home-decor-768.webp"); }
+  .product-option[data-category="garment"] { --responsive-bg: url("assets/product-categories/clothing-and-accessories-768.webp"); }
+}

@@ -138,6 +138,26 @@ window.addEventListener("resize", () => {
 const productFeature = document.querySelector(".product-feature");
 const productOptions = document.querySelectorAll(".product-option");
 
+const deferredBackgrounds = document.querySelectorAll(
+  ".solution-panel, .product-feature, .product-option, .next-step"
+);
+
+if (deferredBackgrounds.length) {
+  if ("IntersectionObserver" in window) {
+    const backgroundObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-media-ready");
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "300px 0px" });
+
+    deferredBackgrounds.forEach((element) => backgroundObserver.observe(element));
+  } else {
+    deferredBackgrounds.forEach((element) => element.classList.add("is-media-ready"));
+  }
+}
+
 if (productFeature && productOptions.length) {
   const productPages = {
     otop: "otop-global.html",
