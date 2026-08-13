@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-13 — Image optimization and ZIP weight
+- Start: Began full referenced-image audit and optimization.
+- Finish: Optimized 44 WebPs and converted four transparent icons to WebP; verified 86 referenced images, responsive pages, ZIP integrity, and extraction parity.
+- Status: Complete.
+
 ## 2026-08-12 — Markdown checkpoint rule
 
 - Start: Added the required Markdown read and start/finish checkpoint rule.
