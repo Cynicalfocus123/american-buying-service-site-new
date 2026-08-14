@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Single homepage hero video
+- Start: Began removing the separate below-fold homepage video and keeping one universal 50-second hero.
+- Finish: Removed the below-fold video section and MP4; verified one 50-second H.264 hero at 1440, 768, 390, and 320 widths with no overflow or console errors. Rebuilt the 112-file ZIP.
+- Status: Complete.
+
 ## 2026-08-14 — Homepage MP4 reference check
 - Start: Began checking why two MP4 files remain in the deployment ZIP.
 - Finish: Confirmed the homepage has one 50-second hero MP4 and one separate below-fold “Learn more” video using the 30-second MP4.
