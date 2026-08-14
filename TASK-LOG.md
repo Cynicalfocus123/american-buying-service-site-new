@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Deliver current ZIP link
+- Start: Began verifying the latest canonical ZIP file and direct local link.
+- Finish: Confirmed the current canonical ZIP exists, is the only project ZIP, and is 12,581,446 bytes.
+- Status: Complete.
+
 ## 2026-08-14 — Remaining deployment weight check
 - Start: Began measuring the remaining large files after removing the second video.
 - Finish: Confirmed the 12,581,446-byte ZIP is driven by the 6,134,005-byte hero video and 6,331,344 bytes of WebP images; no other large media remains.
