@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Final ZIP path layout audit
+- Start: Began verifying canonical ZIP extraction paths against live references.
+- Finish: Rebuilt the canonical ZIP from `live/`; root and nested paths, CRC, extraction hashes, and required deployment paths passed.
+- Status: Complete.
+
 ## 2026-08-14 — Single universal home hero video
 - Start: Began removing the separate mobile hero source and using one approved hero MP4 on all devices.
 - Finish: Switched all devices to the 50-second desktop hero MP4, removed the mobile MP4, rebuilt the 113-file ZIP, and passed reference, parity, CRC, extraction, and responsive checks.
