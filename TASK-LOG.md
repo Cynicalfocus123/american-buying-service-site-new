@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — ZIP size breakdown
+- Start: Began measuring the canonical ZIP and ranking its largest deployment files.
+- Finish: Confirmed the 14,327,231-byte ZIP is driven by the 6,147,666-byte hero video, 1,751,729-byte product video, and 6,333,090 bytes of WebP images.
+- Status: Complete.
+
 ## 2026-08-14 — Final ZIP path layout audit
 - Start: Began verifying canonical ZIP extraction paths against live references.
 - Finish: Rebuilt the canonical ZIP from `live/`; root and nested paths, CRC, extraction hashes, and required deployment paths passed.
