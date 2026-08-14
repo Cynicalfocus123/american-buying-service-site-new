@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Moderate image compression example
+- Start: Began a visual comparison of the current image against a moderate q75 WebP encode.
+- Finish: Compared the 432,766-byte current image with a 353,974-byte q75 candidate; it was 18.2% smaller, visually checked, and not applied to the site.
+- Status: Complete.
+
 ## 2026-08-13 — Image quality comparison example
 - Start: Began a visual comparison of current image quality against an aggressive smaller WebP encode.
 - Finish: Compared the 432,766-byte current image with a 278,240-byte q60 candidate; visual detail loss was confirmed and no site asset was changed.
