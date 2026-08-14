@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Remove product-page video
+- Start: Began removing the unused product-page video section and secondary MP4.
+- Finish: Removed product-page video sections from six source/live pages; retained the MP4 because the homepage still references it. ZIP and parity checks passed.
+- Status: Complete for product pages; further weight reduction needs user direction.
+
 ## 2026-08-14 — ZIP size breakdown
 - Start: Began measuring the canonical ZIP and ranking its largest deployment files.
 - Finish: Confirmed the 14,327,231-byte ZIP is driven by the 6,147,666-byte hero video, 1,751,729-byte product video, and 6,333,090 bytes of WebP images.
