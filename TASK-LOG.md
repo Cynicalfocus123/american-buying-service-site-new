@@ -101,3 +101,7 @@
 - Start: Began requested service-header, button-link, and home-video work.
 - Finish: Updated five service headers, 30 service buttons, and both 50-second homepage hero videos; verified responsive pages, media, parity, and ZIP.
 - Status: Complete.
+# 2026-08-14 — Technical SEO
+- Start: Began the 2026 technical SEO pass for production pages, metadata, structured data, robots.txt, and sitemap.xml.
+- Finish: Added SEO metadata, social tags, supported JSON-LD, robots.txt, sitemap.xml, synchronized `live/`, rebuilt the canonical ZIP, and passed page, responsive, parity, and archive checks.
+- Status: Complete.
