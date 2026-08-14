@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Current ZIP size check
+- Start: Began rechecking the canonical ZIP size and active large files.
+- Finish: Confirmed the ZIP is 14,326,221 bytes; two MP4s account for 7,878,455 bytes and 86 WebPs account for 6,331,344 bytes.
+- Status: Complete.
+
 ## 2026-08-14 — Remove product-page video
 - Start: Began removing the unused product-page video section and secondary MP4.
 - Finish: Removed product-page video sections from six source/live pages; retained the MP4 because the homepage still references it. ZIP and parity checks passed.
