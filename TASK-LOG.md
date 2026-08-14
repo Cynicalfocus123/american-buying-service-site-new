@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Info-site weight assessment
+- Start: Began assessing whether the current deployment ZIP is heavy for an information site.
+- Finish: Confirmed the ZIP is 12,581,446 bytes and the hero video is set to `preload="auto"`; the package is heavy mainly because of the 6.13 MB video and 6.33 MB images.
+- Status: Complete.
+
 ## 2026-08-14 — Deliver current ZIP link
 - Start: Began verifying the latest canonical ZIP file and direct local link.
 - Finish: Confirmed the current canonical ZIP exists, is the only project ZIP, and is 12,581,446 bytes.
