@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-13 — Image quality comparison example
+- Start: Began a visual comparison of current image quality against an aggressive smaller WebP encode.
+- Finish: Compared the 432,766-byte current image with a 278,240-byte q60 candidate; visual detail loss was confirmed and no site asset was changed.
+- Status: Complete.
+
 ## 2026-08-13 — Image optimization and ZIP weight
 - Start: Began full referenced-image audit and optimization.
 - Finish: Optimized 44 WebPs and converted four transparent icons to WebP; verified 86 referenced images, responsive pages, ZIP integrity, and extraction parity.
