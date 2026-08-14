@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Rebuild canonical Hostinger ZIP
+- Start: Began deleting old ZIP packages and rebuilding one verified archive from `live/`.
+- Finish: Deleted the prior ZIP, rebuilt the canonical archive from `live/`, and passed structure, CRC, extraction, and SHA-256 parity checks. One ZIP remains.
+- Status: Complete.
+
 ## 2026-08-14 — Single homepage hero video
 - Start: Began removing the separate below-fold homepage video and keeping one universal 50-second hero.
 - Finish: Removed the below-fold video section and MP4; verified one 50-second H.264 hero at 1440, 768, 390, and 320 widths with no overflow or console errors. Rebuilt the 112-file ZIP.
