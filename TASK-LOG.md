@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Final Hostinger ZIP rebuild
+- Start: Began final source/live parity and canonical ZIP verification.
+- Finish: Rebuilt the 114-file canonical ZIP; verified 112 production references, 89 used deployment assets, source/live parity, CRC, safe paths, extraction hashes, and 32 local smoke checks.
+- Status: Complete.
+
 ## 2026-08-14 — Moderate image compression example
 - Start: Began a visual comparison of the current image against a moderate q75 WebP encode.
 - Finish: Compared the 432,766-byte current image with a 353,974-byte q75 candidate; it was 18.2% smaller, visually checked, and not applied to the site.
