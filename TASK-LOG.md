@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Homepage MP4 reference check
+- Start: Began checking why two MP4 files remain in the deployment ZIP.
+- Finish: Confirmed the homepage has one 50-second hero MP4 and one separate below-fold “Learn more” video using the 30-second MP4.
+- Status: Complete.
+
 ## 2026-08-14 — Current ZIP size check
 - Start: Began rechecking the canonical ZIP size and active large files.
 - Finish: Confirmed the ZIP is 14,326,221 bytes; two MP4s account for 7,878,455 bytes and 86 WebPs account for 6,331,344 bytes.
