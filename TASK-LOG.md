@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Remaining deployment weight check
+- Start: Began measuring the remaining large files after removing the second video.
+- Finish: Confirmed the 12,581,446-byte ZIP is driven by the 6,134,005-byte hero video and 6,331,344 bytes of WebP images; no other large media remains.
+- Status: Complete.
+
 ## 2026-08-14 — Rebuild canonical Hostinger ZIP
 - Start: Began deleting old ZIP packages and rebuilding one verified archive from `live/`.
 - Finish: Deleted the prior ZIP, rebuilt the canonical archive from `live/`, and passed structure, CRC, extraction, and SHA-256 parity checks. One ZIP remains.
