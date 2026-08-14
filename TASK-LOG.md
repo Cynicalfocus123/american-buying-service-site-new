@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Clean page URLs
+- Start: Began removing `.html` from internal site links and adding clean-page routing.
+- Finish: Replaced production page links with clean paths, added Hostinger rewrite/redirect rules, synchronized `live/`, rebuilt the canonical ZIP, and passed link, reference, parity, CRC, and extraction checks.
+- Status: Complete.
+
 ## 2026-08-14 — Deliver updated ZIP link
 - Start: Began verifying the canonical ZIP after the product-page spacing change.
 - Finish: Confirmed the updated 12,581,446-byte ZIP exists and is the only project ZIP.

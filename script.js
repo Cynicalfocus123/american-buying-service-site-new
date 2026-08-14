@@ -157,12 +157,12 @@ if (deferredBackgrounds.length) {
 
 if (productFeature && productOptions.length) {
   const productPages = {
-    otop: "otop-global.html",
-    electronics: "consumer-electronics.html",
-    food: "food-and-beverage.html",
-    sport: "sport-fitness.html",
-    home: "home-decor-furniture.html",
-    garment: "garment-accessories.html"
+    otop: "otop-global",
+    electronics: "consumer-electronics",
+    food: "food-and-beverage",
+    sport: "sport-fitness",
+    home: "home-decor-furniture",
+    garment: "garment-accessories"
   };
   const productCarousel = document.querySelector("[data-product-carousel]");
   const productTrack = productCarousel?.querySelector(".product-options");
@@ -262,7 +262,7 @@ const arrangeFooterContactLinks = () => {
       if (["Affiliate Office", "Complaint", "Our Mission"].includes(link.textContent.trim())) link.remove();
     });
 
-    const contactLink = Array.from(footerLinks.querySelectorAll('a[href="contact.html"]'))[0];
+    const contactLink = Array.from(footerLinks.querySelectorAll('a[href="contact"]'))[0];
     if (contactLink) {
       contactLink.classList.add("footer-contact-link");
       footerHeading?.insertAdjacentElement("afterend", contactLink);
@@ -298,27 +298,27 @@ if (contactForm) {
 }
 
 const SITE_SEARCH_PAGES = Object.freeze([
-  { href: "index.html", title: "Home" },
-  { href: "about.html", title: "About Us" },
-  { href: "contact.html", title: "Contact Us" },
-  { href: "brand-building-service.html", title: "Brand Building Service" },
-  { href: "warehousing-fulfillment-service.html", title: "Warehousing and Fulfillment" },
-  { href: "drop-ship-service.html", title: "Drop Ship Service" },
-  { href: "sourcing-procurement-service.html", title: "Sourcing and Procurement" },
-  { href: "marketplace-ecommerce-sales.html", title: "Marketplace and Ecommerce Sales" },
-  { href: "virtual-office-support.html", title: "Virtual Office Support" },
-  { href: "sales-marketing-service.html", title: "Sales and Marketing" },
-  { href: "trade-show-representation.html", title: "Trade Show Representation" },
-  { href: "formulation-development-service.html", title: "Formulation and Development Service" },
-  { href: "packaging-design.html", title: "Packaging and Design" },
-  { href: "consumer-electronics.html", title: "Consumer Electronics" },
-  { href: "food-and-beverage.html", title: "Food and Beverage" },
-  { href: "garment-accessories.html", title: "Garment and Accessories" },
-  { href: "home-decor-furniture.html", title: "Home Decor and Furniture" },
-  { href: "otop-global.html", title: "OTOP Global" },
-  { href: "sport-fitness.html", title: "Sport and Fitness" },
-  { href: "privacy-policy.html", title: "Privacy Policy" },
-  { href: "terms-and-conditions.html", title: "Terms and Conditions" }
+  { href: "index", title: "Home" },
+  { href: "about", title: "About Us" },
+  { href: "contact", title: "Contact Us" },
+  { href: "brand-building-service", title: "Brand Building Service" },
+  { href: "warehousing-fulfillment-service", title: "Warehousing and Fulfillment" },
+  { href: "drop-ship-service", title: "Drop Ship Service" },
+  { href: "sourcing-procurement-service", title: "Sourcing and Procurement" },
+  { href: "marketplace-ecommerce-sales", title: "Marketplace and Ecommerce Sales" },
+  { href: "virtual-office-support", title: "Virtual Office Support" },
+  { href: "sales-marketing-service", title: "Sales and Marketing" },
+  { href: "trade-show-representation", title: "Trade Show Representation" },
+  { href: "formulation-development-service", title: "Formulation and Development Service" },
+  { href: "packaging-design", title: "Packaging and Design" },
+  { href: "consumer-electronics", title: "Consumer Electronics" },
+  { href: "food-and-beverage", title: "Food and Beverage" },
+  { href: "garment-accessories", title: "Garment and Accessories" },
+  { href: "home-decor-furniture", title: "Home Decor and Furniture" },
+  { href: "otop-global", title: "OTOP Global" },
+  { href: "sport-fitness", title: "Sport and Fitness" },
+  { href: "privacy-policy", title: "Privacy Policy" },
+  { href: "terms-and-conditions", title: "Terms and Conditions" }
 ]);
 
 const normalizeSearchQuery = (value) => String(value ?? "")
@@ -440,7 +440,7 @@ const createSiteSearch = () => {
       const resultTitle = document.createElement("strong");
       resultTitle.textContent = page.title;
       const resultPath = document.createElement("span");
-      resultPath.textContent = page.href.replace(".html", "").replaceAll("-", " ");
+      resultPath.textContent = page.href.replaceAll("-", " ");
       link.append(resultTitle, resultPath);
       item.append(link);
       results.append(item);
