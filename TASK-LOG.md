@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-14 — Deliver updated ZIP link
+- Start: Began verifying the canonical ZIP after the product-page spacing change.
+- Finish: Confirmed the updated 12,581,446-byte ZIP exists and is the only project ZIP.
+- Status: Complete.
+
 ## 2026-08-14 — Product-page spacing
 - Start: Began adding consistent space between product-page body content and the “Let’s discuss” card.
 - Finish: Added a responsive 36–64px gap above all product contact cards; verified 24 viewport checks, no overflow, no console errors, and rebuilt the ZIP.
