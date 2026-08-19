@@ -105,3 +105,10 @@
 - Start: Began the 2026 technical SEO pass for production pages, metadata, structured data, robots.txt, and sitemap.xml.
 - Finish: Added SEO metadata, social tags, supported JSON-LD, robots.txt, sitemap.xml, synchronized `live/`, rebuilt the canonical ZIP, and passed page, responsive, parity, and archive checks.
 - Status: Complete.
+# 2026-08-19 — Restore product video sections
+- Start: Began restoring the approved product-operations video section to all six production product pages.
+- Status: In progress.
+# 2026-08-19 — Restore product video sections
+- Start: Began restoring the approved product-operations video section to all six production product pages.
+- Finish: Restored the video section and asset to source/live, passed 24 responsive checks, full video decode, parity, and ZIP checks.
+- Status: Complete.
