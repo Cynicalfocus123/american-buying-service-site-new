@@ -171,7 +171,7 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 - Refresh the canonical archive in place. Do not create dated, duplicate, or
   alternate deployment ZIPs unless the user explicitly requests another filename.
 - Build the archive only from the final verified `live/` directory.
-- The ZIP root must contain the live site files directly, such as `index.html`,
+- The ZIP root must contain the live site files directly, such as `home.html`,
   CSS, JavaScript, `.htaccess` when present, and referenced media folders/files.
   Do not include a staging, `dist/`, or `public_html/` wrapper directory.
 - Put every referenced asset and required site file inside the ZIP under its correct

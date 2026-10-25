@@ -298,7 +298,7 @@ if (contactForm) {
 }
 
 const SITE_SEARCH_PAGES = Object.freeze([
-  { href: "index", title: "Home" },
+  { href: "home", title: "Home" },
   { href: "about", title: "About Us" },
   { href: "contact", title: "Contact Us" },
   { href: "news", title: "News" },

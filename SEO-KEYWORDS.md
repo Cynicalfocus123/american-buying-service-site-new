@@ -1,6 +1,6 @@
 # SEO and Ads Keywords
 
-Main site: https://www.americanbuyingservice.com/
+Main site: https://www.americanbuyingservice.com/home
 
 Positive keywords are already in page titles, descriptions, and keyword meta
 tags. Negative keywords cannot live on a website; paste them into Google Ads
@@ -61,7 +61,7 @@ Negative:
 
 ## Logistics
 
-Pages: https://www.americanbuyingservice.com/,
+Pages: https://www.americanbuyingservice.com/home,
 https://www.americanbuyingservice.com/sourcing-procurement-service,
 https://www.americanbuyingservice.com/warehousing-fulfillment-service
 

@@ -4,7 +4,7 @@
 
 **Latest live site:**
 
-[https://cynicalfocus123.github.io/american-buying-service-site-new/](https://cynicalfocus123.github.io/american-buying-service-site-new/)
+[https://cynicalfocus123.github.io/american-buying-service-site-new/home](https://cynicalfocus123.github.io/american-buying-service-site-new/home)
 
 This repository contains the working American Buying Service website—not only concept
 images. The production-ready static site is stored in `live/` and includes:
@@ -26,4 +26,4 @@ From the project folder:
 python -m http.server 4173 --directory live
 ```
 
-Then open `http://localhost:4173`.
+Then open `http://localhost:4173/home.html`.

@@ -93,12 +93,12 @@ const version = (shell.match(/styles\.css\?v=([0-9a-z]+)/) || fail(`no styles.cs
 if (!header.includes('href="news" aria-current="page"')) fail(`the header in ${SHELL} has no News link`);
 
 const organization = {
-  '@type': 'Organization', '@id': `${SITE}#organization`, name: 'American Buying Service', url: SITE,
+  '@type': 'Organization', '@id': `${SITE}#organization`, name: 'American Buying Service', url: `${SITE}home`,
   logo: { '@type': 'ImageObject', url: `${SITE}american-buying-service-logo-optimized.webp` },
   email: 'info@americanbuyingservice.com',
   address: { '@type': 'PostalAddress', streetAddress: '355 SOUTH GRAND AVE., SUITE 2450, PMB 619', addressLocality: 'LOS ANGELES', addressRegion: 'CA', postalCode: '90071', addressCountry: 'US' },
 };
-const website = { '@type': 'WebSite', '@id': `${SITE}#website`, url: SITE, name: 'American Buying Service', publisher: { '@id': `${SITE}#organization` } };
+const website = { '@type': 'WebSite', '@id': `${SITE}#website`, url: `${SITE}home`, name: 'American Buying Service', publisher: { '@id': `${SITE}#organization` } };
 
 const page = ({ title, description, keywords, url, ogType, image, imageAlt, imageWidth, imageHeight, extraMeta = '', graph, bodyClass, main }) => `<!doctype html>
 <html lang="en">
@@ -164,10 +164,10 @@ for (const a of articles) {
       { '@type': 'NewsArticle', '@id': `${url}#article`, headline: a.title, description: a.summary, datePublished: a.date, dateModified: a.date,
         articleSection: a.category, ...(tags(a).length ? { keywords: tags(a) } : {}), image: [image], author: { '@type': 'Organization', name: a.author },
         publisher: { '@id': `${SITE}#organization` }, mainEntityOfPage: { '@id': `${url}#webpage` }, inLanguage: 'en' },
-      breadcrumb([['Home', SITE], ['News', `${SITE}news`], [a.title, url]])],
+      breadcrumb([['Home', `${SITE}home`], ['News', `${SITE}news`], [a.title, url]])],
     main: `  <main id="main" class="news-main">
     <article class="news-article">
-      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index">Home</a><span aria-hidden="true">→</span><a href="news">News</a><span aria-hidden="true">→</span>${esc(a.category)}</nav>
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="home">Home</a><span aria-hidden="true">→</span><a href="news">News</a><span aria-hidden="true">→</span>${esc(a.category)}</nav>
       <p class="news-category">${esc(a.category)}</p>
       <h1>${esc(a.title)}</h1>
       <p class="news-article-summary">${esc(a.summary)}</p>
@@ -207,7 +207,7 @@ fs.writeFileSync(path.join(ROOT, 'news.html'), page({
     { '@type': 'CollectionPage', '@id': `${newsUrl}#webpage`, url: newsUrl, name: 'News | American Buying Service', description: newsDescription,
       isPartOf: { '@id': `${SITE}#website` }, breadcrumb: { '@id': `${newsUrl}#breadcrumb` },
       ...(articles.length ? { mainEntity: { '@type': 'ItemList', itemListElement: articles.map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE}${a.page}` })) } } : {}) },
-    breadcrumb([['Home', SITE], ['News', newsUrl]])],
+    breadcrumb([['Home', `${SITE}home`], ['News', newsUrl]])],
   main: `  <main id="main" class="news-main">
     <section class="news-hero" aria-labelledby="news-title">
       <h1 id="news-title">News and Media</h1>

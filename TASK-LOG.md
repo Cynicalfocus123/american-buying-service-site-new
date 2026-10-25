@@ -203,3 +203,11 @@
 - Start: Link Al Jazeera, Semafor, and FAO-WFP sources in the article; add [text](url) link support to build-news.js.
 - Finish: 3 source links (Al Jazeera Oct 14, Semafor May 28, FAO-WFP Hunger Hotspots June 2026), each URL loads (200), open in new tab; build-news.js turns [text](url) into links; orange underlined link style; CSS stamp v=20261025g on all pages. Synced to main live/ and source. 506/506 checks on main live/ and source (1440/768/390/320). Full ZIP from main live/: 14279171 B, 140 files, verified.
 - Status: Committed and pushed to main.
+# 2026-10-25 — MRE meal images: cache-bust, no white background
+- Start: Owner sees old white-background pouch on MRE page; all 8 photos in New mre image are already used (S__1679474 = re-save of Beef Kapow). Version meal image URLs, drop white picture background.
+- Finish: Stopped by owner (browser cache was the cause). Edits reverted; nothing shipped.
+# 2026-10-25 — Home page at /home
+- Start: Home links and SEO must use www.americanbuyingservice.com/home, not index or the bare root.
+- Deleted index.html (source, live/, main live/) with owner OK; 404.html (standard header/footer, noindex) sends the bare GitHub Pages address to home; .htaccess DirectoryIndex home.html, ErrorDocument 404.
+- Finish: Main live/ was left broken mid-task (index.html gone, 180 links to index); fixed by syncing home.html, 404.html, links, SEO, .htaccess into main live/. 586/586 checks on main live/ (1440/768/390/320). ZIP from main live/: 14,281,233 B, 141 files, verified, no index file.
+- Status: Committed and pushed to main.
