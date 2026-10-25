@@ -175,3 +175,7 @@
 - Start: Add a News page (newest first), article pages with full SEO, and News in the header; owner adds articles later.
 - Finish: tools/build-news.js builds news.html, news-<slug>.html, assets/news AVIF/WebP, and sitemap news block from news-source/<slug>/article.md; NEWS-HOWTO.md documents it. News in header (desktop+mobile) and footer on all 22 pages; site search lists News. Sample 3-article build in a temp copy passed 162 checks; real site (0 articles, coming-soon message) passed 67 news checks and 643 regression checks on source and live/. CSS/JS stamp v=20261025e.
 - Status: Committed and pushed to main.
+# 2026-10-25 — New MRE meal photos
+- Start: Replace MRE body images with 7 new kitchen pouch photos; keep alternating rows and fade-in.
+- Finish: 7 rows (adds Chicken Pad Thai Noodles); pouch text updated (700 g / 24 oz, Thai Chicken Fried Rice, curry allergen note); AVIF 57-71 KB from 184-217 KB JPG + WebP; square image frame; CSS/JS stamp v=20261025f. 643/643 browser checks on source and live/; full ZIP verified; update ZIP of this change only.
+- Status: Committed and pushed to main.
