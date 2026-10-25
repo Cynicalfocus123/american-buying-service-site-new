@@ -137,3 +137,7 @@
 - Start: User asked for only used, necessary files in the ZIP; home hero is the only site video.
 - Finish: Removed video section from 6 product pages; kept the 6 product MP4s in assets/video/product (not deleted); moved their live/ copies to D:\dev\tmp\abs-live-unused-20261025. live/ 121 files, 13,237,579 B, no unused files. 287/287 browser checks at 1440/768/390/320. ZIP 12,877,173 B (was 182,549,092 B), CRC/paths/hashes verified, 1 MP4.
 - Status: Not committed: .git still locked at old path until this session closes.
+# 2026-10-25 — MRE layout, contact page, product buttons
+- Start: MRE header image, ONE TASTES wording, no grey boxes, meal H2 alternating rows, Get in touch to contact, MRE first in menus, remove contact form.
+- Finish: All done in source and live/. 415/415 browser checks at 1440/768/390/320 on source and live/. live/ 121 files, no unused files. ZIP 12,877,090 B verified.
+- Status: Committed and pushed to main.
