@@ -121,6 +121,14 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 - If authentication, remote configuration, validation, or push fails, stop, preserve
   the local work, and report the exact blocker. Never report an unverified push.
 
+## Hard Live Folder Rule (owner, 2026-10-25)
+
+- `live/` means the `live/` folder in the main project folder, not a Git branch,
+  worktree copy, or commit. Every change must reach that folder in the same task,
+  together with its source change. A change not in that `live/` is not done.
+- Every ZIP, full or update-only, is built only from that `live/` folder, never
+  from a Git checkout, worktree, branch, or commit.
+
 ## Hard Git and Live Parity Rule
 
 - In this project, "live deployment" always means the committed `live/` folder.

@@ -195,3 +195,7 @@
 - Start: Add keywords (Thailand, MRE, global food crisis, Mstar Holding, Jakapun Viwatkurkul, Mstar Asia, global war, Middle East, UN); new news-only ZIP.
 - Finish: 17 keywords in meta keywords, NewsArticle keywords, and article:tag (build-news.js now emits the last two). Body text unchanged. 490/490 checks on source and live/. Update ZIP american-buying-service-update-news.zip replaced: 7 news files, 323861 B, verified. Canonical ZIP not rebuilt (owner wants news-only ZIP).
 - Status: Committed and pushed to main.
+# 2026-10-25 — Main live/ sync, ZIPs from live/, new hard rule
+- Start: Main project live/ lacked the news article; owner: ZIPs only from live/, every change must reach live/.
+- Finish: Copied the 7 news files to main live/ and source (+article.md, build-news.js); main live/ = worktree live/ (only .nojekyll line ending differs). 490/490 checks on main live/. Full ZIP from main live/: 14,279,116 B, 140 files, verified. News update ZIP from main live/: 7 files, verified. Rule added to AGENTS.md.
+- Status: Committed and pushed to main.
