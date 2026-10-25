@@ -187,3 +187,7 @@
 - Start: Replace the article with the owner's new version (June 26 date (owner changed mid-task), ABS as distributor, new summary); rebuild, sync live/, test, commit, push. No update ZIP.
 - Finish: Owner's new text as-is (no spelling fixes needed); date and dateline June 26, 2026; summary 201 chars (over ~160, kept as given). 463/463 browser + SEO checks on source and live/ (1440/768/390/320). live/ 140 files; full ZIP 14278906 B from live/, verified. No update ZIP.
 - Status: Committed and pushed to main.
+# 2026-10-25 — CEO line wording
+- Start: Remove nested brackets in the CEO line; keep June 26 date and other text as owner wants.
+- Finish: CEO line now "President and CEO of Mstar Holding, Mstar (Asia) Co., Ltd., and American Buying Service". 463/463 checks on source and live/. Owner asked for no full-site ZIP: canonical ZIP not rebuilt (exception; it lacks this wording fix). Update ZIP american-buying-service-update-news.zip (main project folder, untracked): 7 news files, 323,649 B, CRC/paths/hashes verified.
+- Status: Committed and pushed to main.

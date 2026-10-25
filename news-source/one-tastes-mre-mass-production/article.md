@@ -19,7 +19,7 @@ In June, the United Nations Food and Agriculture Organization (FAO) and World Fo
 
 For Mstar Holding, these developments have reinforced the urgency of expanding its food production operations.
 
-Jakapun Viwatkurkul, President and CEO of Mstar Holding (Mstar (Asia) Co., Ltd.) and American Buying Service, said the company intends to tackle the growing threat of global food insecurity head-on by developing practical and accessible food solutions for civilian and military markets.
+Jakapun Viwatkurkul, President and CEO of Mstar Holding, Mstar (Asia) Co., Ltd., and American Buying Service, said the company intends to tackle the growing threat of global food insecurity head-on by developing practical and accessible food solutions for civilian and military markets.
 
 Through ONE TASTES, the company is producing ready-to-eat meals designed for military personnel, emergency responders, humanitarian relief operations, outdoor enthusiasts, and civilians preparing for unexpected emergencies.
 
