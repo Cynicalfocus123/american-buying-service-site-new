@@ -163,3 +163,7 @@
 - Start: Add the Mstar WhatsApp QR to the Contact page with "Contact us via WhatsApp".
 - Finish: QR box under the email link (lossless WebP 6,474 B; stacks on phones); CSS/JS stamp v=20261025d. 495/495 browser checks on source and live/. live/ 132 files; full ZIP from live/, verified; update-only ZIP for Hostinger built on request. Bigger QR not yet on disk.
 - Status: Committed and pushed to main.
+# 2026-10-25 — Contact location emails
+- Start: Bangkok email to info@americanbuyingservice.com; add the same email to New Delhi.
+- Finish: All three location cards show info@americanbuyingservice.com; 499/499 browser checks on source and live/; full ZIP from live/ verified; update-only ZIP built on request.
+- Status: Committed and pushed to main.
