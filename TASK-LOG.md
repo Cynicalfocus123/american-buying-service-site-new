@@ -167,3 +167,7 @@
 - Start: Bangkok email to info@americanbuyingservice.com; add the same email to New Delhi.
 - Finish: All three location cards show info@americanbuyingservice.com; 499/499 browser checks on source and live/; full ZIP from live/ verified; update-only ZIP built on request.
 - Status: Committed and pushed to main.
+# 2026-10-25 — Same footer on every page
+- Start: News and Investor Relations missing from the footer on some pages.
+- Finish: Six product pages (incl. MRE) had an older footer; all 22 pages now share the standard footer. 611/611 browser checks on source and live/; full ZIP from live/ verified; cumulative update ZIP built.
+- Status: Committed and pushed to main.
