@@ -1,5 +1,11 @@
 # Task Log
 
+## 2026-09-03 — Codebase rundown
+
+- Start: Began an evidence-based inventory of the site stack, runtime behavior, deployment, and development tools.
+- Finish: Added `CODEBASE-RUNDOWN.md` with the verified static stack, code behavior, media inventory, deployment paths, tooling, and maintenance risks.
+- Status: Complete.
+
 ## 2026-08-19 — Correct product-page videos
 - Start: Began replacing the shared product video with the mapped video on each product page.
 - Finish: Replaced the shared clip with six optimized H.264 deliveries, preserved source media, passed full video checks, 24 responsive checks, source/live parity, and ZIP verification.
