@@ -141,3 +141,7 @@
 - Start: MRE header image, ONE TASTES wording, no grey boxes, meal H2 alternating rows, Get in touch to contact, MRE first in menus, remove contact form.
 - Finish: All done in source and live/. 415/415 browser checks at 1440/768/390/320 on source and live/. live/ 121 files, no unused files. ZIP 12,877,090 B verified.
 - Status: Committed and pushed to main.
+# 2026-10-25 — SEO domain, MRE logo header, zig-zag meals
+- Start: Point SEO to www.americanbuyingservice.com; ONE TASTES logo as full-width MRE header; alternating meal rows with fade-in; move files back into the new site folder.
+- Finish: 0 github.io refs; non-www to www redirect (untested on Apache); keywords on 5 pages, ad lists in SEO-KEYWORDS.md; logo header AVIF/WebP desktop 32/64 KB, mobile 24/43 KB; CSS/JS cache stamp to v=20261025. 479/479 browser checks on source and live/. live/ 125 files; ZIP 13,041,222 B from live/, verified.
+- Status: Committed and pushed to main.

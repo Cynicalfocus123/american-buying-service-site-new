@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cynicalfocus123.github.io/american-buying-service-site-new/sitemap.xml
+Sitemap: https://www.americanbuyingservice.com/sitemap.xml
