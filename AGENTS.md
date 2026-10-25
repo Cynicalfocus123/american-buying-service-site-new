@@ -189,6 +189,13 @@ boundaries, token-saving, optimization, verification, and deployment packaging.
 - Report the final archive filename, byte size, file count, verification outcome,
   and exact upload/extraction instruction.
 
+## News
+
+- News articles are built from `news-source/` with `node tools/build-news.js`; follow
+  `NEWS-HOWTO.md` exactly. `news-source/` and `tools/` are source-only and stay out
+  of `live/` and every ZIP. Generated `news.html`, `news-*.html`, and
+  `assets/news/` are production files.
+
 ## Verification Discipline
 
 - Check grammar whenever visible text is added or changed.

@@ -171,3 +171,7 @@
 - Start: News and Investor Relations missing from the footer on some pages.
 - Finish: Six product pages (incl. MRE) had an older footer; all 22 pages now share the standard footer. 611/611 browser checks on source and live/; full ZIP from live/ verified; cumulative update ZIP built.
 - Status: Committed and pushed to main.
+# 2026-10-25 — News system
+- Start: Add a News page (newest first), article pages with full SEO, and News in the header; owner adds articles later.
+- Finish: tools/build-news.js builds news.html, news-<slug>.html, assets/news AVIF/WebP, and sitemap news block from news-source/<slug>/article.md; NEWS-HOWTO.md documents it. News in header (desktop+mobile) and footer on all 22 pages; site search lists News. Sample 3-article build in a temp copy passed 162 checks; real site (0 articles, coming-soon message) passed 67 news checks and 643 regression checks on source and live/. CSS/JS stamp v=20261025e.
+- Status: Committed and pushed to main.

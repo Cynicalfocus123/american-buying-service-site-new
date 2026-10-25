@@ -301,6 +301,7 @@ const SITE_SEARCH_PAGES = Object.freeze([
   { href: "index", title: "Home" },
   { href: "about", title: "About Us" },
   { href: "contact", title: "Contact Us" },
+  { href: "news", title: "News" },
   { href: "brand-building-service", title: "Brand Building Service" },
   { href: "warehousing-fulfillment-service", title: "Warehousing and Fulfillment" },
   { href: "drop-ship-service", title: "Drop Ship Service" },

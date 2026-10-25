@@ -22,4 +22,7 @@
   <url><loc>https://www.americanbuyingservice.com/contact</loc></url>
   <url><loc>https://www.americanbuyingservice.com/privacy-policy</loc></url>
   <url><loc>https://www.americanbuyingservice.com/terms-and-conditions</loc></url>
+  <!-- news:start -->
+  <url><loc>https://www.americanbuyingservice.com/news</loc></url>
+  <!-- news:end -->
 </urlset>

@@ -22,7 +22,7 @@ into a rigid template.
 - Keep the logo clearly visible at the far left.
 - Place navigation or the menu trigger beside the logo and utility controls at the
   far right.
-- On desktop, show Home, About Us, Our Services, Products, and Contact Us as visible
+- On desktop, show Home, About Us, Our Services, Products, News, and Contact Us as visible
   navigation links. Show the hamburger menu only on tablet and mobile.
 - Keep desktop navigation text comfortably readable and provide responsive,
   keyboard-accessible submenus for Our Services and Products. Long mobile submenus
