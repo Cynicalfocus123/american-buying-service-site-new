@@ -508,12 +508,8 @@ const revealItems = document.querySelectorAll("[data-reveal]");
 if (revealItems.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   document.documentElement.classList.add("reveal-on");
   const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("is-visible");
-      revealObserver.unobserve(entry.target);
-    });
-  }, { threshold: 0.2, rootMargin: "0px 0px -8% 0px" });
+    entries.forEach((entry) => entry.target.classList.toggle("is-visible", entry.isIntersecting));
+  }, { threshold: 0.15, rootMargin: "0px 0px -5% 0px" });
   revealItems.forEach((item) => revealObserver.observe(item));
 }
 

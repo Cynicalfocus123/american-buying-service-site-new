@@ -151,3 +151,7 @@
 - Start: Point SEO to www.americanbuyingservice.com; ONE TASTES logo as full-width MRE header; alternating meal rows with fade-in; move files back into the new site folder.
 - Finish: 0 github.io refs; non-www to www redirect (untested on Apache); keywords on 5 pages, ad lists in SEO-KEYWORDS.md; logo header AVIF/WebP desktop 32/64 KB, mobile 24/43 KB; CSS/JS cache stamp to v=20261025. 479/479 browser checks on source and live/. live/ 125 files; ZIP 13,041,222 B from live/, verified.
 - Status: Committed and pushed to main.
+# 2026-10-25 — Six MRE meals with fast fade
+- Start: Six new MRE pouch images in alternating rows; fade in fast on scroll up and down; sharper logo header.
+- Finish: 6 meals with ingredients/allergens from pouches; AVIF 37-50 KB each + WebP; header from 3084px logo; fade 0.5s, replays on re-entry; CSS/JS stamp v=20261025b. 487/487 browser checks on source and live/. live/ 131 files; ZIP from live/, verified.
+- Status: Committed and pushed to main.
