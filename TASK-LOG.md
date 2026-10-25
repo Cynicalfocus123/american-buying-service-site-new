@@ -155,3 +155,7 @@
 - Start: Six new MRE pouch images in alternating rows; fade in fast on scroll up and down; sharper logo header.
 - Finish: 6 meals with ingredients/allergens from pouches; AVIF 37-50 KB each + WebP; header from 3084px logo; fade 0.5s, replays on re-entry; CSS/JS stamp v=20261025b. 487/487 browser checks on source and live/. live/ 131 files; ZIP from live/, verified.
 - Status: Committed and pushed to main.
+# 2026-10-25 — MRE header like product pages
+- Start: MRE header should match Food & Beverage style with ONE TASTES logo behind MRE title.
+- Finish: Logo as background (AVIF via image-set, WebP fallback, mobile crop at 760px) under the standard dark overlay with white MRE title; CSS/JS stamp v=20261025c. 491/491 browser checks on source and live/. live/ 131 files; ZIP from live/, verified.
+- Status: Committed and pushed to main.
