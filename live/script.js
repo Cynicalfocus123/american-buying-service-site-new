@@ -317,6 +317,7 @@ const SITE_SEARCH_PAGES = Object.freeze([
   { href: "home-decor-furniture", title: "Home Decor and Furniture" },
   { href: "otop-global", title: "OTOP Global" },
   { href: "sport-fitness", title: "Sport and Fitness" },
+  { href: "mre", title: "MRE" },
   { href: "privacy-policy", title: "Privacy Policy" },
   { href: "terms-and-conditions", title: "Terms and Conditions" }
 ]);

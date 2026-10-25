@@ -1,5 +1,10 @@
 # Task Log
 
+## 2026-08-19 — Correct product-page videos
+- Start: Began replacing the shared product video with the mapped video on each product page.
+- Finish: Replaced the shared clip with six optimized H.264 deliveries, preserved source media, passed full video checks, 24 responsive checks, source/live parity, and ZIP verification.
+- Status: Complete.
+
 ## 2026-08-14 — Clean page URLs
 - Start: Began removing `.html` from internal site links and adding clean-page routing.
 - Finish: Replaced production page links with clean paths, added Hostinger rewrite/redirect rules, synchronized `live/`, rebuilt the canonical ZIP, and passed link, reference, parity, CRC, and extraction checks.
@@ -112,3 +117,23 @@
 - Start: Began restoring the approved product-operations video section to all six production product pages.
 - Finish: Restored the video section and asset to source/live, passed 24 responsive checks, full video decode, parity, and ZIP checks.
 - Status: Complete.
+# 2026-10-25 — Code catch-up review
+- Start: Began read-only review of site code, rules, parity, and deploy state.
+- Finish: Source/live parity OK, no missing refs. Found: local 4f60e29 not on origin/main; 181 MB ZIP (product videos 21-39 MB each, with audio) over GitHub 100 MB file limit; DESIGNER.md hero filename stale; AGENT.md duplicates AGENTS.md. No site files changed.
+- Status: Complete.
+# 2026-10-25 — Carousel arrow fix and MRE page
+- Start: Began fixing the garbled left carousel arrow, adding an MRE product page, and re-running live speed tests.
+- Finish: Fixed garbled left carousel arrow and "Let's get started" arrow; added MRE page (copy, 3 meal images as AVIF 106,731 B + WebP fallback 154,428 B from 347,188 B JPG), MRE in all product menus, search, sitemap. Hero uses Food & Beverage image as placeholder. 163/163 browser checks at 1440/768/390/320 on source and live/. live/ parity 127 files, ZIP 182,549,054 B verified (CRC, paths, hashes). Not pushed: ZIP over GitHub 100 MB limit.
+- Status: Committed on branch claude/site-code-review-7825ca; push blocked.
+# 2026-10-25 — Matching carousel arrows
+- Start: Began making the left carousel arrow match the right arrow.
+- Finish: Left button now uses the same arrow glyph mirrored with CSS; 163/163 browser checks at 1440/768/390/320; live/ parity 127 files; ZIP 182,549,092 B verified. Not pushed: ZIP over GitHub 100 MB limit.
+- Status: Committed on branch claude/site-code-review-7825ca.
+# 2026-10-25 — Folder cleanup
+- Start: Began approved folder consolidation.
+- Finish: Copied 3 MRE source JPGs into site image content/MRE; sent old "American Buying New Site" folder to Recycle Bin (only unique items were MRE JPGs and an unsaved product-page draft, approved to drop). Created empty "American Buying Service" main folder. Repo rename to "American Buying Service\git" blocked: folder in use by open Claude session.
+- Status: Partly done; rename pending.
+# 2026-10-25 — Remove product videos from deployment
+- Start: User asked for only used, necessary files in the ZIP; home hero is the only site video.
+- Finish: Removed video section from 6 product pages; kept the 6 product MP4s in assets/video/product (not deleted); moved their live/ copies to D:\dev\tmp\abs-live-unused-20261025. live/ 121 files, 13,237,579 B, no unused files. 287/287 browser checks at 1440/768/390/320. ZIP 12,877,173 B (was 182,549,092 B), CRC/paths/hashes verified, 1 MP4.
+- Status: Not committed: .git still locked at old path until this session closes.
