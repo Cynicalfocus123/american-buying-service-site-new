@@ -1,38 +1,38 @@
 title: Mstar Holding Begins Mass Production of ONE TASTES MREs
-date: 2026-06-25
+date: 2026-06-26
 category: Business & Global Affairs
 author: Mstar Holding
-summary: New ready-to-eat meals will serve civilians and military personnel worldwide as United Nations officials warn of a growing global food crisis.
+summary: American Buying Service will lead worldwide distribution of the new ready-to-eat meals for civilians, military personnel, and humanitarian organizations amid growing concerns over global food security.
 image: photo.jpg
 image_alt: ONE TASTES Chicken Fettuccine MRE pouches, front and back, on a kitchen counter
 keywords: ONE TASTES, MRE, meals ready to eat, Mstar Holding, emergency food, military rations, humanitarian food, global food crisis
 ---
-BANGKOK, THAILAND — American Buying Service (Mstar Asia Co., Ltd.) has announced the start of mass production of its new Meals Ready-to-Eat (MREs) under its food brand, ONE TASTES, marking a major expansion into the global emergency food and military ration market.
+BANGKOK, June 26, 2026 — Mstar Holding, through Mstar (Asia) Co., Ltd., has announced that mass production of its new Meals Ready-to-Eat (MREs) under the ONE TASTES brand is underway, with American Buying Service designated as the distributor responsible for bringing the products to international markets.
 
-The announcement comes as the United Nations warns that disruptions to global fertilizer supplies, rising food prices, and ongoing conflicts are putting millions of people at greater risk of food insecurity.
+The announcement comes as governments and humanitarian organizations face mounting concerns about global food security, disrupted agricultural supply chains, and the growing risk of food shortages in vulnerable regions.
 
-On June 17, the United Nations Food and Agriculture Organization (FAO) and World Food Programme (WFP) warned that acute hunger could worsen across 13 global hotspots. The report identified Sudan, South Sudan, Yemen, and Palestine among the areas facing the most serious food insecurity, while also highlighting deteriorating conditions in Somalia and northeastern Nigeria.
+On October 14, Al Jazeera reported that a senior United Nations official warned of a looming food crisis unless urgent action is taken to restore fertilizer shipments through the Strait of Hormuz. The disruption threatens agricultural productivity across parts of Asia and Africa, potentially affecting future harvests and driving food prices higher.
 
-The warning follows an earlier May 28 report by Semafor on the growing global fertilizer shortage, which highlighted the possibility of a prolonged food crisis as fertilizer production declines and farmers face increasing difficulties securing essential agricultural supplies.
+The warning follows a May 28 report by Semafor, which highlighted how prolonged fertilizer shortages could affect global agricultural production for years.
 
-For Mstar Holding, these developments have added urgency to its plans to bring ONE TASTES MREs to international markets.
+In June, the United Nations Food and Agriculture Organization (FAO) and World Food Programme (WFP) also warned of worsening hunger across 13 global hotspots, including Sudan, South Sudan, Yemen, and Somalia.
 
-Jakapun Viwatkurkul, President and CEO of Mstar Holding (Mstar Asia Co., Ltd.) and American Buying Service, said the company wants to tackle the growing threat of global food insecurity head-on rather than wait for the situation to worsen.
+For Mstar Holding, these developments have reinforced the urgency of expanding its food production operations.
 
-Through ONE TASTES, the company is developing ready-to-eat meals intended for civilians, military personnel, emergency responders, humanitarian organizations, and people living or working in environments where reliable food supplies can be difficult to obtain.
+Jakapun Viwatkurkul, President and CEO of Mstar Holding (Mstar (Asia) Co., Ltd.) and American Buying Service, said the company intends to tackle the growing threat of global food insecurity head-on by developing practical and accessible food solutions for civilian and military markets.
 
-The brand's product range includes meals such as Chicken Fettuccine, designed to offer familiar flavors in a convenient, portable format. Guided by its slogan, "All the Taste You Need," ONE TASTES aims to make emergency food practical without sacrificing the eating experience.
+Through ONE TASTES, the company is producing ready-to-eat meals designed for military personnel, emergency responders, humanitarian relief operations, outdoor enthusiasts, and civilians preparing for unexpected emergencies.
 
-Unlike conventional meals that require extensive preparation, MREs are designed for convenient storage, transportation, and consumption, making them particularly useful during natural disasters, military operations, humanitarian emergencies, and supply-chain disruptions.
+The ONE TASTES product range includes Chicken Fettuccine, a packaged meal developed to provide familiar flavors in a convenient format. The brand aims to combine practicality, nutritional value, and taste, making ready-to-eat food suitable for everyday preparedness as well as demanding operational environments.
 
-With mass production now beginning, Mstar Holding plans to expand distribution through international commercial partners, government procurement channels, defense organizations, and humanitarian supply networks.
+Unlike conventional meals requiring extensive preparation, MREs are designed for convenient storage, transportation, and consumption when access to cooking facilities or regular food supplies is limited.
 
-The company's goal is to make ONE TASTES products available across multiple continents, including regions of Africa, Asia, the Middle East, Europe, and North America.
+American Buying Service will oversee distribution of ONE TASTES MRE products, working to establish supply channels for government agencies, military organizations, humanitarian groups, commercial distributors, and individual consumers.
 
-While MREs cannot solve the agricultural challenges behind a global food crisis, they can provide an important source of prepared meals when normal food distribution systems are interrupted.
+The distribution strategy targets markets across Asia, Africa, the Middle East, Europe, and North America, with the company planning to expand its international reach as production capacity and commercial partnerships develop.
 
-For Mstar Holding, the launch represents both a new business opportunity and an effort to address a growing international concern.
+Although MREs cannot replace long-term agricultural solutions, they can provide an important source of prepared meals during emergencies, natural disasters, armed conflicts, and supply-chain disruptions.
 
-As governments and humanitarian organizations prepare for increasingly uncertain food supplies, Mstar Holding hopes to establish ONE TASTES as a dependable international MRE brand serving both civilian and military markets.
+For Mstar Holding, ONE TASTES represents both a strategic business expansion and an opportunity to respond to a growing international challenge.
 
-The company believes that investing in food production and emergency preparedness today could help communities become better equipped to face tomorrow's challenges.
+With production underway and American Buying Service preparing international distribution, the company aims to establish ONE TASTES as a dependable ready-to-eat food brand serving civilians and military personnel worldwide.

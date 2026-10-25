@@ -183,3 +183,7 @@
 - Start: Add news-source/one-tastes-mre-mass-production (article.md + photo), build, sync live/, test, commit, push. No update ZIP.
 - Finish: Article page news-one-tastes-mre-mass-production.html, news.html card, sitemap entry; photo 822x814 JPG 200,291 B -> AVIF 64,973 B / WebP 101,584 B (+768 px 57,647 / 90,050 B). No text changes needed. 463/463 browser + SEO checks on source and live/ (1440/768/390/320). live/ 140 files, 14,677,173 B; ZIP 14,278,929 B from live/, CRC/paths/hashes verified. No update ZIP (owner will ask).
 - Status: Committed and pushed to main.
+# 2026-10-25 — Revised ONE TASTES article text
+- Start: Replace the article with the owner's new version (June 26 date (owner changed mid-task), ABS as distributor, new summary); rebuild, sync live/, test, commit, push. No update ZIP.
+- Finish: Owner's new text as-is (no spelling fixes needed); date and dateline June 26, 2026; summary 201 chars (over ~160, kept as given). 463/463 browser + SEO checks on source and live/ (1440/768/390/320). live/ 140 files; full ZIP 14278906 B from live/, verified. No update ZIP.
+- Status: Committed and pushed to main.
