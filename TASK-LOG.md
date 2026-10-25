@@ -179,3 +179,7 @@
 - Start: Replace MRE body images with 7 new kitchen pouch photos; keep alternating rows and fade-in.
 - Finish: 7 rows (adds Chicken Pad Thai Noodles); pouch text updated (700 g / 24 oz, Thai Chicken Fried Rice, curry allergen note); AVIF 57-71 KB from 184-217 KB JPG + WebP; square image frame; CSS/JS stamp v=20261025f. 643/643 browser checks on source and live/; full ZIP verified; update ZIP of this change only.
 - Status: Committed and pushed to main.
+# 2026-10-25 — First news article: ONE TASTES MRE mass production
+- Start: Add news-source/one-tastes-mre-mass-production (article.md + photo), build, sync live/, test, commit, push. No update ZIP.
+- Finish: Article page news-one-tastes-mre-mass-production.html, news.html card, sitemap entry; photo 822x814 JPG 200,291 B -> AVIF 64,973 B / WebP 101,584 B (+768 px 57,647 / 90,050 B). No text changes needed. 463/463 browser + SEO checks on source and live/ (1440/768/390/320). live/ 140 files, 14,677,173 B; ZIP 14,278,929 B from live/, CRC/paths/hashes verified. No update ZIP (owner will ask).
+- Status: Committed and pushed to main.
