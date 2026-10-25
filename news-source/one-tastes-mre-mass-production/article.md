@@ -11,11 +11,11 @@ BANGKOK, June 26, 2026 — Mstar Holding, through Mstar (Asia) Co., Ltd., has an
 
 The announcement comes as governments and humanitarian organizations face mounting concerns about global food security, disrupted agricultural supply chains, and the growing risk of food shortages in vulnerable regions.
 
-On October 14, Al Jazeera reported that a senior United Nations official warned of a looming food crisis unless urgent action is taken to restore fertilizer shipments through the Strait of Hormuz. The disruption threatens agricultural productivity across parts of Asia and Africa, potentially affecting future harvests and driving food prices higher.
+On October 14, [Al Jazeera reported](https://www.aljazeera.com/news/2026/10/14/un-official-warns-of-looming-food-crisis-as-hormuz-fertiliser-plan-stalls) that a senior United Nations official warned of a looming food crisis unless urgent action is taken to restore fertilizer shipments through the Strait of Hormuz. The disruption threatens agricultural productivity across parts of Asia and Africa, potentially affecting future harvests and driving food prices higher.
 
-The warning follows a May 28 report by Semafor, which highlighted how prolonged fertilizer shortages could affect global agricultural production for years.
+The warning follows a [May 28 report by Semafor](https://www.semafor.com/article/05/28/2026/growing-fertilizer-shortage-risks-global-food-crisis), which highlighted how prolonged fertilizer shortages could affect global agricultural production for years.
 
-In June, the United Nations Food and Agriculture Organization (FAO) and World Food Programme (WFP) also warned of worsening hunger across 13 global hotspots, including Sudan, South Sudan, Yemen, and Somalia.
+In June, the United Nations Food and Agriculture Organization (FAO) and World Food Programme (WFP) also [warned of worsening hunger across 13 global hotspots](https://www.wfp.org/publications/hunger-hotspots-fao-wfp-early-warnings-acute-food-insecurity-june-november-2026), including Sudan, South Sudan, Yemen, and Somalia.
 
 For Mstar Holding, these developments have reinforced the urgency of expanding its food production operations.
 

@@ -199,3 +199,7 @@
 - Start: Main project live/ lacked the news article; owner: ZIPs only from live/, every change must reach live/.
 - Finish: Copied the 7 news files to main live/ and source (+article.md, build-news.js); main live/ = worktree live/ (only .nojekyll line ending differs). 490/490 checks on main live/. Full ZIP from main live/: 14,279,116 B, 140 files, verified. News update ZIP from main live/: 7 files, verified. Rule added to AGENTS.md.
 - Status: Committed and pushed to main.
+# 2026-10-25 — Source links in news article
+- Start: Link Al Jazeera, Semafor, and FAO-WFP sources in the article; add [text](url) link support to build-news.js.
+- Finish: 3 source links (Al Jazeera Oct 14, Semafor May 28, FAO-WFP Hunger Hotspots June 2026), each URL loads (200), open in new tab; build-news.js turns [text](url) into links; orange underlined link style; CSS stamp v=20261025g on all pages. Synced to main live/ and source. 506/506 checks on main live/ and source (1440/768/390/320). Full ZIP from main live/: 14279171 B, 140 files, verified.
+- Status: Committed and pushed to main.

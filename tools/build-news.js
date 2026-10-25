@@ -140,6 +140,8 @@ ${main}
 
 const picture = (a, suffix, width, height, attrs) => `<picture><source type="image/avif" srcset="assets/news/${a.slug}${suffix}.avif"><img src="assets/news/${a.slug}${suffix}.webp" width="${width}" height="${height}" alt="${esc(a.alt)}" ${attrs}></picture>`;
 const meta = (a) => `<span class="news-author">${esc(a.author)}</span><time datetime="${a.date}">${longDate(a.date)}</time>`;
+// [text](https://...) in article text becomes a source link that opens in a new tab.
+const links = (html) => html.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 const tags = (a) => (a.keywords || '').split(',').map((t) => t.trim()).filter(Boolean);
 const breadcrumb = (items) => ({
   '@type': 'BreadcrumbList', '@id': `${items[items.length - 1][1]}#breadcrumb`,
@@ -152,7 +154,7 @@ for (const a of articles) {
   const url = `${SITE}${a.page}`;
   const image = `${SITE}assets/news/${a.slug}.webp`;
   const title = `${a.title} | American Buying Service`;
-  const body = a.blocks.map((block) => (block.startsWith('## ') ? `<h2>${esc(block.slice(3))}</h2>` : `<p>${esc(block)}</p>`)).join('\n        ');
+  const body = a.blocks.map((block) => (block.startsWith('## ') ? `<h2>${esc(block.slice(3))}</h2>` : `<p>${links(esc(block))}</p>`)).join('\n        ');
   fs.writeFileSync(path.join(ROOT, `${a.page}.html`), page({
     title, description: a.summary, keywords: a.keywords, url, ogType: 'article', image, imageAlt: a.alt, imageWidth: a.width, imageHeight: a.height,
     extraMeta: `\n<meta property="article:published_time" content="${a.date}">\n<meta property="article:section" content="${esc(a.category)}">${tags(a).map((t) => `\n<meta property="article:tag" content="${esc(t)}">`).join('')}`,

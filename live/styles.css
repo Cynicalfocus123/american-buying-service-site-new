@@ -3285,6 +3285,8 @@ body[data-concept="midnight"] .site-footer { background: #040a10; }
 .news-article-media img { width: 100%; height: auto; display: block; }
 .news-article-body { max-width: 760px; margin-top: clamp(40px, 6vw, 72px); }
 .news-article-body p { margin: 0 0 26px; color: #45576b; font-size: clamp(16px, 1.3vw, 18px); line-height: 1.8; }
+.news-article-body a { color: var(--orange); text-decoration: underline; text-underline-offset: 3px; }
+.news-article-body a:hover, .news-article-body a:focus-visible { color: var(--navy); }
 .news-article-body h2 { margin: 40px 0 16px; color: var(--navy); font-family: var(--display); font-size: clamp(26px, 2.4vw, 34px); letter-spacing: -.03em; line-height: 1.1; }
 .news-back { margin-top: 12px; display: inline-flex; gap: 8px; color: var(--navy); font-weight: 800; }
 .news-back:hover, .news-back:focus-visible { color: var(--accent); }

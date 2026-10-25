@@ -37,6 +37,8 @@ Second paragraph. Leave one empty line between paragraphs.
 - `title`, `date` (YYYY-MM-DD), `category`, `author`, `summary`, and `image` are
   required. `image_alt` and `keywords` are optional.
 - Folders starting with `_` (like `_template`) are ignored.
+- To link a source, write `[words to click](https://full-address)` in a
+  paragraph. The link opens in a new tab.
 
 ## For Claude Code
 
