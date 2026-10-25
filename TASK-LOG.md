@@ -159,3 +159,7 @@
 - Start: MRE header should match Food & Beverage style with ONE TASTES logo behind MRE title.
 - Finish: Logo as background (AVIF via image-set, WebP fallback, mobile crop at 760px) under the standard dark overlay with white MRE title; CSS/JS stamp v=20261025c. 491/491 browser checks on source and live/. live/ 131 files; ZIP from live/, verified.
 - Status: Committed and pushed to main.
+# 2026-10-25 — WhatsApp QR on Contact page
+- Start: Add the Mstar WhatsApp QR to the Contact page with "Contact us via WhatsApp".
+- Finish: QR box under the email link (lossless WebP 6,474 B; stacks on phones); CSS/JS stamp v=20261025d. 495/495 browser checks on source and live/. live/ 132 files; full ZIP from live/, verified; update-only ZIP for Hostinger built on request. Bigger QR not yet on disk.
+- Status: Committed and pushed to main.
