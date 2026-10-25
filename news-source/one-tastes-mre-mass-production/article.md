@@ -5,7 +5,7 @@ author: Mstar Holding
 summary: American Buying Service will lead worldwide distribution of the new ready-to-eat meals for civilians, military personnel, and humanitarian organizations amid growing concerns over global food security.
 image: photo.jpg
 image_alt: ONE TASTES Chicken Fettuccine MRE pouches, front and back, on a kitchen counter
-keywords: ONE TASTES, MRE, meals ready to eat, Mstar Holding, emergency food, military rations, humanitarian food, global food crisis
+keywords: ONE TASTES, MRE, meals ready to eat, Thailand, Bangkok, global food crisis, Mstar Holding, Mstar Asia, Jakapun Viwatkurkul, American Buying Service, UN, United Nations, global war, Middle East, emergency food, military rations, humanitarian food
 ---
 BANGKOK, June 26, 2026 — Mstar Holding, through Mstar (Asia) Co., Ltd., has announced that mass production of its new Meals Ready-to-Eat (MREs) under the ONE TASTES brand is underway, with American Buying Service designated as the distributor responsible for bringing the products to international markets.
 

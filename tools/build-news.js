@@ -140,6 +140,7 @@ ${main}
 
 const picture = (a, suffix, width, height, attrs) => `<picture><source type="image/avif" srcset="assets/news/${a.slug}${suffix}.avif"><img src="assets/news/${a.slug}${suffix}.webp" width="${width}" height="${height}" alt="${esc(a.alt)}" ${attrs}></picture>`;
 const meta = (a) => `<span class="news-author">${esc(a.author)}</span><time datetime="${a.date}">${longDate(a.date)}</time>`;
+const tags = (a) => (a.keywords || '').split(',').map((t) => t.trim()).filter(Boolean);
 const breadcrumb = (items) => ({
   '@type': 'BreadcrumbList', '@id': `${items[items.length - 1][1]}#breadcrumb`,
   itemListElement: items.map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })),
@@ -154,12 +155,12 @@ for (const a of articles) {
   const body = a.blocks.map((block) => (block.startsWith('## ') ? `<h2>${esc(block.slice(3))}</h2>` : `<p>${esc(block)}</p>`)).join('\n        ');
   fs.writeFileSync(path.join(ROOT, `${a.page}.html`), page({
     title, description: a.summary, keywords: a.keywords, url, ogType: 'article', image, imageAlt: a.alt, imageWidth: a.width, imageHeight: a.height,
-    extraMeta: `\n<meta property="article:published_time" content="${a.date}">\n<meta property="article:section" content="${esc(a.category)}">`,
+    extraMeta: `\n<meta property="article:published_time" content="${a.date}">\n<meta property="article:section" content="${esc(a.category)}">${tags(a).map((t) => `\n<meta property="article:tag" content="${esc(t)}">`).join('')}`,
     bodyClass: 'news-page news-article-page',
     graph: [organization, website,
       { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: title, description: a.summary, isPartOf: { '@id': `${SITE}#website` }, breadcrumb: { '@id': `${url}#breadcrumb` } },
       { '@type': 'NewsArticle', '@id': `${url}#article`, headline: a.title, description: a.summary, datePublished: a.date, dateModified: a.date,
-        articleSection: a.category, image: [image], author: { '@type': 'Organization', name: a.author },
+        articleSection: a.category, ...(tags(a).length ? { keywords: tags(a) } : {}), image: [image], author: { '@type': 'Organization', name: a.author },
         publisher: { '@id': `${SITE}#organization` }, mainEntityOfPage: { '@id': `${url}#webpage` }, inLanguage: 'en' },
       breadcrumb([['Home', SITE], ['News', `${SITE}news`], [a.title, url]])],
     main: `  <main id="main" class="news-main">

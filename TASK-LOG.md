@@ -191,3 +191,7 @@
 - Start: Remove nested brackets in the CEO line; keep June 26 date and other text as owner wants.
 - Finish: CEO line now "President and CEO of Mstar Holding, Mstar (Asia) Co., Ltd., and American Buying Service". 463/463 checks on source and live/. Owner asked for no full-site ZIP: canonical ZIP not rebuilt (exception; it lacks this wording fix). Update ZIP american-buying-service-update-news.zip (main project folder, untracked): 7 news files, 323,649 B, CRC/paths/hashes verified.
 - Status: Committed and pushed to main.
+# 2026-10-25 — Article SEO keywords + news update ZIP
+- Start: Add keywords (Thailand, MRE, global food crisis, Mstar Holding, Jakapun Viwatkurkul, Mstar Asia, global war, Middle East, UN); new news-only ZIP.
+- Finish: 17 keywords in meta keywords, NewsArticle keywords, and article:tag (build-news.js now emits the last two). Body text unchanged. 490/490 checks on source and live/. Update ZIP american-buying-service-update-news.zip replaced: 7 news files, 323861 B, verified. Canonical ZIP not rebuilt (owner wants news-only ZIP).
+- Status: Committed and pushed to main.
